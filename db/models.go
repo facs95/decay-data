@@ -20,4 +20,6 @@ type Error struct {
 	ID        int
 	Height    string
 	EventType string
+    TxIndex string
+    EventIndex string
 }

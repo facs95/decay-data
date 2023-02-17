@@ -57,7 +57,7 @@ func handleWorkers(ctx context.Context, db *sql.DB, start, end, batchSize int, m
 			for job := range jobs {
 				log.Printf("starting worker with blocks %v-%v", job[0], job[1])
 				// Query the external resource for data
-				mergedAccounts, migratedAccounts := processBatchOfBlocks(job)
+				mergedAccounts, migratedAccounts := processBatchOfBlocks(ctx, db, job)
 
 				// Process the data and insert into MySQL database
 				if err := insertIntoDB(ctx, db, migratedAccounts, mergedAccounts); err != nil {
@@ -84,13 +84,18 @@ func handleWorkers(ctx context.Context, db *sql.DB, start, end, batchSize int, m
 	return nil
 }
 
-func processBatchOfBlocks(job []int) ([]dblib.MergedAccount, []dblib.MigratedAccount) {
+func processBatchOfBlocks(ctx context.Context, db *sql.DB, job []int) ([]dblib.MergedAccount, []dblib.MigratedAccount) {
 	mergedEvents, migratedEvents := []dblib.MergedAccount{}, []dblib.MigratedAccount{}
 	for j := job[0]; j <= job[1]; j++ {
-		blockResult, err := query.GetBlockResult(strconv.Itoa(j))
+		height := strconv.Itoa(j)
+		blockResult, err := query.GetBlockResult(height, 0)
 		if err != nil {
 			// This should be on Error database
-			log.Printf("Error querying external resource: %v", err)
+			error := dblib.Error{
+				Height: height,
+			}
+			insertErrIntoDB(ctx, db, error)
+			log.Printf("Error querying external resource at height %v: %v", height, err)
 			continue
 		}
 		merged, migrated := filterAndDecodeEvents(blockResult.Result.TxsResults, j)
@@ -150,6 +155,35 @@ func filterAndDecodeEvents(txs []query.ResponseDeliverTx, height int) ([]dblib.M
 		}
 	}
 	return mergedEvents, migratedEvents
+}
+
+func insertErrIntoDB(ctx context.Context, db *sql.DB, error dblib.Error) error {
+	//Create a transaction on the database
+	tx, err := db.BeginTx(ctx, nil)
+	if err != nil {
+		return fmt.Errorf("error starting transaction: %v", err)
+	}
+	defer tx.Rollback()
+
+	// Insert data into merge_table Table
+	stmt1, err := dblib.PrepareInsertErrorQuery(ctx, tx)
+	if err != nil {
+		return fmt.Errorf("error preparing statement for ErrorTable: %v", err)
+	}
+	defer stmt1.Close()
+
+	err = dblib.ExecContextError(ctx, stmt1, error)
+	if err != nil {
+		return fmt.Errorf("error inserting data into Table1: %v", err)
+	}
+
+	// Commit the transaction
+	err = tx.Commit()
+	if err != nil {
+		return fmt.Errorf("error committing transaction: %v", err)
+	}
+
+	return nil
 }
 
 func insertIntoDB(ctx context.Context, db *sql.DB, migratedAccounts []dblib.MigratedAccount, mergedAccount []dblib.MergedAccount) error {

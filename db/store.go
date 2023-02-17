@@ -9,10 +9,12 @@ import (
 
 func CreateErrorTable(db *sql.DB) {
 	sqlStmt := `
-	   create table if not exists error_event (
+	   create table if not exists error (
 	    id integer not null primary key,
 	    height text,
         event_type text
+        tx_index text
+        event_index text
 	);`
 	_, err := db.Exec(sqlStmt)
 	if err != nil {
@@ -53,6 +55,15 @@ func CreateMigrateAccountTable(db *sql.DB) {
 	}
 }
 
+func PrepareInsertErrorQuery(ctx context.Context, tx *sql.Tx) (*sql.Stmt, error) {
+	insertError, err := tx.PrepareContext(ctx, "insert into error(height, event_type, tx_index, event_index) values(?,?,?,?)")
+	if err != nil {
+		fmt.Printf("Error preparing transaction: %q", err)
+		return nil, err
+	}
+	return insertError, nil
+}
+
 func PrepareInsertMergeAccountQuery(ctx context.Context, tx *sql.Tx) (*sql.Stmt, error) {
 	insertAccount, err := tx.PrepareContext(ctx, "insert into merged_account(recipient, height, claimed_coins, fund_community_pool_coins) values(?,?,?,?)")
 	if err != nil {
@@ -60,6 +71,15 @@ func PrepareInsertMergeAccountQuery(ctx context.Context, tx *sql.Tx) (*sql.Stmt,
 		return nil, err
 	}
 	return insertAccount, nil
+}
+
+func ExecContextError(ctx context.Context, stmt *sql.Stmt, error Error) error {
+	// Insert data into Error
+	_, err := stmt.ExecContext(ctx, error.Height, error.EventType, error.TxIndex, error.EventIndex)
+	if err != nil {
+		return fmt.Errorf("error inserting data into MergedAccount: %v", err)
+	}
+	return nil
 }
 
 func ExecContextMergedAccount(ctx context.Context, stmt *sql.Stmt, account MergedAccount) error {

@@ -3,6 +3,7 @@ package query
 import (
 	"encoding/json"
 	"net/http"
+	"time"
 
 	"io/ioutil"
 	"log"
@@ -11,19 +12,30 @@ import (
 var client = &http.Client{}
 var clientUrl = "https://tendermint.bd.evmos.org:26657/"
 
-func GetBlockResult(height string) (*BlockResult, error) {
+// GetBlockResult queries `block_result` directly from node
+// if the request or parser fail the function  will retry 3 times
+func GetBlockResult(height string, try int) (*BlockResult, error) {
+	try += try
 	balance_start := "block_results?height="
 	url := balance_start + height
 	body, err := makeRequest(url, height)
 	if err != nil {
-		log.Printf("Error making request for height: %v", height)
-		return nil, err
+		if try >= 3 {
+			log.Printf("Error making request for height: %v", height)
+			time.Sleep(1000)
+			return nil, err
+		}
+		return GetBlockResult(height, try)
 	}
 	m := &BlockResult{}
 	err = json.Unmarshal(body, &m)
 	if err != nil {
-		log.Printf("Error parsing the body for height %v, with err %v", height, err)
-		return nil, err
+		if try >= 3 {
+			log.Printf("Error parsing the body for height %v, with err %v", height, err)
+			time.Sleep(1000)
+			return nil, err
+		}
+		return GetBlockResult(height, try)
 	}
 	return m, nil
 }
