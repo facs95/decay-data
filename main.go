@@ -17,7 +17,7 @@ const (
 	FromBlock  = 265401 // Block from which to start querying
 	ToBlock    = 353670 // Last block to query
 	BatchSize  = 1000   // Amount of blocks per thread
-	MaxWorkers = 5      // Amount of threads
+	MaxWorkers = 10     // Amount of threads
 )
 
 func main() {
@@ -55,6 +55,7 @@ func handleWorkers(ctx context.Context, db *sql.DB, start, end, batchSize int, m
 			defer wg.Done()
 
 			for job := range jobs {
+				log.Printf("starting worker with blocks %v-%v", job[0], job[1])
 				// Query the external resource for data
 				mergedAccounts, migratedAccounts := processBatchOfBlocks(job)
 
@@ -141,7 +142,10 @@ func filterAndDecodeEvents(txs []query.ResponseDeliverTx, height int) ([]dblib.M
 					Amount: v.Attributes[1].Value,
 					Action: v.Attributes[2].Value,
 				}
-				migratedEvents = append(migratedEvents, migratedAccount)
+				// We are only interested in IBC Transfers
+				if migratedAccount.Action == "ACTION_IBC_TRANSFER" {
+					migratedEvents = append(migratedEvents, migratedAccount)
+				}
 			}
 		}
 	}
