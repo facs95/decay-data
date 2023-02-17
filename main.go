@@ -15,7 +15,7 @@ import (
 
 const (
 	FromBlock  = 265401 // Block from which to start querying
-	ToBlock    = 265402 // Last block to query
+	ToBlock    = 353670 // Last block to query
 	BatchSize  = 1000   // Amount of blocks per thread
 	MaxWorkers = 5      // Amount of threads
 )

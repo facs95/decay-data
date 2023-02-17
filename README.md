@@ -13,3 +13,9 @@ To accomplish this we are trying the following steps:
 - `claim` if and only if the action is `ACTION_IBC_TRANSFER`.
 
 5. Then we collect this data into two separate tables `merged_account` and `migrated_account`.
+
+In order to run it please:
+
+1. Modify the `FromBlock` and `ToBlock` value you want to iterate over.
+2. Remove old `accounts.db` file if any.
+3. Run `go run main.go`
