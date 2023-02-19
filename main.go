@@ -6,7 +6,9 @@ import (
 	"fmt"
 	dblib "github.com/facs95/decay-data/db"
 	"github.com/facs95/decay-data/query"
+	"io"
 	"log"
+	"os"
 	"strconv"
 	"sync"
 
@@ -43,6 +45,16 @@ func main() {
 }
 
 func handleWorkers(ctx context.Context, db *sql.DB, start, end, batchSize int, maxWorkers int) error {
+	// Create a log file to have persistent logs
+	logFile, err := os.OpenFile("./output.log", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+	if err != nil {
+		log.Fatalf("error opening file: %v", err)
+	}
+	defer logFile.Close()
+
+	wrt := io.MultiWriter(os.Stdout, logFile)
+	log.SetOutput(wrt)
+
 	// Create a channel to hold jobs to be executed by workers
 	jobs := make(chan []int, maxWorkers)
 	// Create a WaitGroup to wait for all workers to complete
@@ -84,8 +96,8 @@ func handleWorkers(ctx context.Context, db *sql.DB, start, end, batchSize int, m
 	return nil
 }
 
-func processBatchOfBlocks(ctx context.Context, db *sql.DB, job []int) ([]dblib.MergedAccount, []dblib.MigratedAccount) {
-	mergedEvents, migratedEvents := []dblib.MergedAccount{}, []dblib.MigratedAccount{}
+func processBatchOfBlocks(ctx context.Context, db *sql.DB, job []int) ([]dblib.MergedEvents, []dblib.ClaimEvents) {
+	mergedEvents, migratedEvents := []dblib.MergedEvents{}, []dblib.ClaimEvents{}
 	for j := job[0]; j <= job[1]; j++ {
 		height := strconv.Itoa(j)
 		blockResult, err := query.GetBlockResult(height, 0)
@@ -106,8 +118,8 @@ func processBatchOfBlocks(ctx context.Context, db *sql.DB, job []int) ([]dblib.M
 	return mergedEvents, migratedEvents
 }
 
-func filterAndDecodeEvents(txs []query.ResponseDeliverTx, height int) ([]dblib.MergedAccount, []dblib.MigratedAccount) {
-	mergedEvents, migratedEvents := []dblib.MergedAccount{}, []dblib.MigratedAccount{}
+func filterAndDecodeEvents(txs []query.ResponseDeliverTx, height int) ([]dblib.MergedEvents, []dblib.ClaimEvents) {
+	mergedEvents, migratedEvents := []dblib.MergedEvents{}, []dblib.ClaimEvents{}
 	//  Iterate over all txs in the block
 	for i := range txs {
 		// Iterate over all events in tx
@@ -123,7 +135,7 @@ func filterAndDecodeEvents(txs []query.ResponseDeliverTx, height int) ([]dblib.M
 					// return nil, nil
 					continue
 				}
-				mergeRecord := dblib.MergedAccount{
+				mergeRecord := dblib.MergedEvents{
 					Height:            strconv.Itoa(height),
 					Recipient:         v.Attributes[0].Value,
 					ClaimedCoins:      v.Attributes[1].Value,
@@ -141,16 +153,17 @@ func filterAndDecodeEvents(txs []query.ResponseDeliverTx, height int) ([]dblib.M
 					// return nil, nil
 					continue
 				}
-				migratedAccount := dblib.MigratedAccount{
+				migratedAccount := dblib.ClaimEvents{
 					Height: strconv.Itoa(height),
 					Sender: v.Attributes[0].Value,
 					Amount: v.Attributes[1].Value,
 					Action: v.Attributes[2].Value,
 				}
-				// We are only interested in IBC Transfers
-				if migratedAccount.Action == "ACTION_IBC_TRANSFER" {
-					migratedEvents = append(migratedEvents, migratedAccount)
-				}
+
+				// Decission was made to collect all claim data within decay block range
+				// instead of only merged / migrated accounts
+				// for context https://evmos.slack.com/archives/C022BMJSPQV/p1676632098959959
+				migratedEvents = append(migratedEvents, migratedAccount)
 			}
 		}
 	}
@@ -186,7 +199,7 @@ func insertErrIntoDB(ctx context.Context, db *sql.DB, error dblib.Error) error {
 	return nil
 }
 
-func insertIntoDB(ctx context.Context, db *sql.DB, migratedAccounts []dblib.MigratedAccount, mergedAccount []dblib.MergedAccount) error {
+func insertIntoDB(ctx context.Context, db *sql.DB, migratedAccounts []dblib.ClaimEvents, mergedAccount []dblib.MergedEvents) error {
 	//Create a transaction on the database
 	tx, err := db.BeginTx(ctx, nil)
 	if err != nil {
