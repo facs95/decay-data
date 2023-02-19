@@ -1,6 +1,6 @@
 package db
 
-type MergedAccount struct {
+type MergedEvents struct {
 	ID                int
 	Recipient         string
 	ClaimedCoins      string
@@ -8,7 +8,7 @@ type MergedAccount struct {
 	Height            string
 }
 
-type MigratedAccount struct {
+type ClaimEvents struct {
 	ID     int
 	Sender string
 	Action string
@@ -17,9 +17,9 @@ type MigratedAccount struct {
 }
 
 type Error struct {
-	ID        int
-	Height    string
-	EventType string
-    TxIndex string
-    EventIndex string
+	ID         int
+	Height     string
+	EventType  string
+	TxIndex    string
+	EventIndex string
 }

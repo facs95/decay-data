@@ -82,7 +82,7 @@ func ExecContextError(ctx context.Context, stmt *sql.Stmt, error Error) error {
 	return nil
 }
 
-func ExecContextMergedAccount(ctx context.Context, stmt *sql.Stmt, account MergedAccount) error {
+func ExecContextMergedAccount(ctx context.Context, stmt *sql.Stmt, account MergedEvents) error {
 	// Insert data into Table1
 	_, err := stmt.ExecContext(ctx, account.Recipient, account.Height, account.ClaimedCoins, account.FundCommunityPool)
 	if err != nil {
@@ -100,7 +100,7 @@ func PrepareInsertMigratedAccountQuery(ctx context.Context, tx *sql.Tx) (*sql.St
 	return insertAccount, nil
 }
 
-func ExecContextMigratedAccount(ctx context.Context, stmt *sql.Stmt, account MigratedAccount) error {
+func ExecContextMigratedAccount(ctx context.Context, stmt *sql.Stmt, account ClaimEvents) error {
 	// Insert data into Table1
 	_, err := stmt.ExecContext(ctx, account.Sender, account.Height, account.Amount, account.Action)
 	if err != nil {
