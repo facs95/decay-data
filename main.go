@@ -19,20 +19,21 @@ const (
 	FromBlock  = 265401 // Block from which to start querying
 	ToBlock    = 353670 // Last block to query
 	BatchSize  = 1000   // Amount of blocks per thread
-	MaxWorkers = 10     // Amount of threads
+	MaxWorkers = 5      // Amount of threads
 )
 
 func main() {
 	// Set up database connection
 	db, err := sql.Open("sqlite3", "./accounts.db")
 	if err != nil {
-		log.Fatalf("Error opening database connection: %v", err)
+		log.Fatalf("error opening database connection: %v", err)
 	}
 	defer db.Close()
 
 	// Create en databases
 	dblib.CreateMergeAccountTable(db)
 	dblib.CreateMigrateAccountTable(db)
+	dblib.CreateErrorTable(db)
 
 	// Set up context with cancellation
 	ctx, cancel := context.WithCancel(context.Background())
@@ -40,7 +41,7 @@ func main() {
 
 	// Process the range in batches
 	if err := handleWorkers(ctx, db, FromBlock, ToBlock, BatchSize, MaxWorkers); err != nil {
-		log.Fatalf("Error processing range: %v", err)
+		log.Fatalf("error processing range: %v", err)
 	}
 }
 
@@ -63,21 +64,20 @@ func handleWorkers(ctx context.Context, db *sql.DB, start, end, batchSize int, m
 	// Launch worker goroutines
 	for i := 0; i < maxWorkers; i++ {
 		wg.Add(1)
-		go func() {
+		go func(i int) {
 			defer wg.Done()
-
 			for job := range jobs {
-				log.Printf("starting worker with blocks %v-%v", job[0], job[1])
+				log.Printf("starting worker %v with blocks %v-%v", i, job[0], job[1])
 				// Query the external resource for data
 				mergedAccounts, migratedAccounts := processBatchOfBlocks(ctx, db, job)
 
 				// Process the data and insert into MySQL database
 				if err := insertIntoDB(ctx, db, migratedAccounts, mergedAccounts); err != nil {
-					log.Printf("Error inserting into database: %v", err)
+					log.Printf("error inserting into database: %v", err)
 					continue
 				}
 			}
-		}()
+		}(i)
 	}
 
 	// Generate jobs for each batch and send them to the jobs channel
@@ -107,7 +107,7 @@ func processBatchOfBlocks(ctx context.Context, db *sql.DB, job []int) ([]dblib.M
 				Height: height,
 			}
 			insertErrIntoDB(ctx, db, error)
-			log.Printf("Error querying external resource at height %v: %v", height, err)
+			log.Printf("error querying external resource at height %v: %v", height, err)
 			continue
 		}
 		merged, migrated := filterAndDecodeEvents(blockResult.Result.TxsResults, j)
@@ -130,7 +130,7 @@ func filterAndDecodeEvents(txs []query.ResponseDeliverTx, height int) ([]dblib.M
 				// Decode the attributes
 				err := v.DecodeAttributes()
 				if err != nil {
-					log.Printf("Error decoding resource: %v", err)
+					log.Printf("error decoding resource: %v", err)
 					// we should add this records to error table
 					// return nil, nil
 					continue
@@ -148,7 +148,7 @@ func filterAndDecodeEvents(txs []query.ResponseDeliverTx, height int) ([]dblib.M
 				// Decode the attributes
 				err := v.DecodeAttributes()
 				if err != nil {
-					log.Printf("Error decoding resource: %v", err)
+					log.Printf("error decoding resource: %v", err)
 					// we should add this records to error table
 					// return nil, nil
 					continue

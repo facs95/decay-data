@@ -25,7 +25,7 @@ func CreateErrorTable(db *sql.DB) {
 
 func CreateMergeAccountTable(db *sql.DB) {
 	sqlStmt := `
-	   create table if not exists merged_account (
+	   create table if not exists merged_event (
 	    id integer not null primary key,
 	    recipient text,
         height text,
@@ -41,7 +41,7 @@ func CreateMergeAccountTable(db *sql.DB) {
 
 func CreateMigrateAccountTable(db *sql.DB) {
 	sqlStmt := `
-	   create table if not exists migrated_account (
+	   create table if not exists migrated_event (
 	    id integer not null primary key,
         sender text,
         height text,
@@ -65,7 +65,7 @@ func PrepareInsertErrorQuery(ctx context.Context, tx *sql.Tx) (*sql.Stmt, error)
 }
 
 func PrepareInsertMergeAccountQuery(ctx context.Context, tx *sql.Tx) (*sql.Stmt, error) {
-	insertAccount, err := tx.PrepareContext(ctx, "insert into merged_account(recipient, height, claimed_coins, fund_community_pool_coins) values(?,?,?,?)")
+	insertAccount, err := tx.PrepareContext(ctx, "insert into merged_event(recipient, height, claimed_coins, fund_community_pool_coins) values(?,?,?,?)")
 	if err != nil {
 		fmt.Printf("Error preparing transaction: %q", err)
 		return nil, err
@@ -92,7 +92,7 @@ func ExecContextMergedAccount(ctx context.Context, stmt *sql.Stmt, account Merge
 }
 
 func PrepareInsertMigratedAccountQuery(ctx context.Context, tx *sql.Tx) (*sql.Stmt, error) {
-	insertAccount, err := tx.PrepareContext(ctx, "insert into migrated_account(sender, height, amount, claim_action) values(?,?,?,?)")
+	insertAccount, err := tx.PrepareContext(ctx, "insert into migrated_event(sender, height, amount, claim_action) values(?,?,?,?)")
 	if err != nil {
 		fmt.Printf("Error preparing transaction: %q", err)
 		return nil, err
