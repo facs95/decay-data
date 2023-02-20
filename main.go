@@ -18,7 +18,7 @@ import (
 const (
 	FromBlock  = 265401 // Block from which to start querying
 	ToBlock    = 353670 // Last block to query
-	BatchSize  = 1000   // Amount of blocks per thread
+	BatchSize  = 10     // Amount of blocks per thread
 	MaxWorkers = 5      // Amount of threads
 )
 
@@ -106,7 +106,9 @@ func processBatchOfBlocks(ctx context.Context, db *sql.DB, job []int) ([]dblib.M
 			error := dblib.Error{
 				Height: height,
 			}
-			insertErrIntoDB(ctx, db, error)
+			if err := insertErrIntoDB(ctx, db, error); err != nil {
+				log.Printf("error inserting error value on DB at height %v: %v", height, err)
+			}
 			log.Printf("error querying external resource at height %v: %v", height, err)
 			continue
 		}
@@ -130,7 +132,7 @@ func filterAndDecodeEvents(txs []query.ResponseDeliverTx, height int) ([]dblib.M
 				// Decode the attributes
 				err := v.DecodeAttributes()
 				if err != nil {
-					log.Printf("error decoding resource: %v", err)
+					log.Printf("error decoding resource at height %v: %v", height, err)
 					// we should add this records to error table
 					// return nil, nil
 					continue
@@ -148,7 +150,7 @@ func filterAndDecodeEvents(txs []query.ResponseDeliverTx, height int) ([]dblib.M
 				// Decode the attributes
 				err := v.DecodeAttributes()
 				if err != nil {
-					log.Printf("error decoding resource: %v", err)
+					log.Printf("error decoding resource at height %v: %v", height, err)
 					// we should add this records to error table
 					// return nil, nil
 					continue

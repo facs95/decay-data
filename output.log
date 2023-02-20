@@ -1,0 +1,39 @@
+2023/02/20 18:26:12 starting worker 4 with blocks 265401-265410
+2023/02/20 18:26:12 starting worker 1 with blocks 265411-265420
+2023/02/20 18:26:12 starting worker 2 with blocks 265431-265440
+2023/02/20 18:26:12 starting worker 0 with blocks 265421-265430
+2023/02/20 18:26:12 starting worker 3 with blocks 265441-265450
+2023/02/20 18:26:15 finished job for blocks: 265411 - 265420
+2023/02/20 18:26:15 starting worker 1 with blocks 265451-265460
+2023/02/20 18:26:15 finished job for blocks: 265431 - 265440
+2023/02/20 18:26:15 starting worker 2 with blocks 265461-265470
+2023/02/20 18:26:15 finished job for blocks: 265441 - 265450
+2023/02/20 18:26:15 starting worker 3 with blocks 265471-265480
+2023/02/20 18:26:15 finished job for blocks: 265421 - 265430
+2023/02/20 18:26:15 starting worker 0 with blocks 265481-265490
+2023/02/20 18:26:15 finished job for blocks: 265401 - 265410
+2023/02/20 18:26:15 starting worker 4 with blocks 265491-265500
+2023/02/20 18:26:16 finished job for blocks: 265451 - 265460
+2023/02/20 18:26:16 starting worker 1 with blocks 265501-265510
+2023/02/20 18:26:16 finished job for blocks: 265471 - 265480
+2023/02/20 18:26:16 starting worker 3 with blocks 265511-265520
+2023/02/20 18:26:16 finished job for blocks: 265491 - 265500
+2023/02/20 18:26:16 starting worker 4 with blocks 265521-265530
+2023/02/20 18:26:16 finished job for blocks: 265461 - 265470
+2023/02/20 18:26:16 starting worker 2 with blocks 265531-265540
+2023/02/20 18:26:16 finished job for blocks: 265481 - 265490
+2023/02/20 18:26:16 starting worker 0 with blocks 265541-265550
+2023/02/20 18:26:18 finished job for blocks: 265511 - 265520
+2023/02/20 18:26:18 finished job for blocks: 265531 - 265540
+2023/02/20 18:26:18 starting worker 3 with blocks 265551-265560
+2023/02/20 18:26:18 starting worker 2 with blocks 265561-265570
+2023/02/20 18:26:18 finished job for blocks: 265521 - 265530
+2023/02/20 18:26:18 starting worker 4 with blocks 265571-265580
+2023/02/20 18:26:18 finished job for blocks: 265501 - 265510
+2023/02/20 18:26:18 starting worker 1 with blocks 265581-265590
+2023/02/20 18:26:18 finished job for blocks: 265541 - 265550
+2023/02/20 18:26:18 starting worker 0 with blocks 265591-265600
+2023/02/20 18:26:19 finished job for blocks: 265551 - 265560
+2023/02/20 18:26:19 starting worker 3 with blocks 265601-265610
+2023/02/20 18:26:19 finished job for blocks: 265581 - 265590
+2023/02/20 18:26:19 starting worker 1 with blocks 265611-265620

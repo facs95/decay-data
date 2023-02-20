@@ -21,20 +21,18 @@ func GetBlockResult(height string, try int) (*BlockResult, error) {
 	body, err := makeRequest(url, height)
 	if err != nil {
 		if try >= 3 {
-			log.Printf("Error making request for height: %v", height)
-			time.Sleep(1000)
 			return nil, err
 		}
+		time.Sleep(1000)
 		return GetBlockResult(height, try)
 	}
 	m := &BlockResult{}
 	err = json.Unmarshal(body, &m)
 	if err != nil {
 		if try >= 3 {
-			log.Printf("Error parsing the body for height %v, with err %v", height, err)
-			time.Sleep(1000)
 			return nil, err
 		}
+		time.Sleep(1000)
 		return GetBlockResult(height, try)
 	}
 	return m, nil
