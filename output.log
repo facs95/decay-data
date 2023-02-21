@@ -1,39 +1,909 @@
-2023/02/20 18:26:12 starting worker 4 with blocks 265401-265410
-2023/02/20 18:26:12 starting worker 1 with blocks 265411-265420
-2023/02/20 18:26:12 starting worker 2 with blocks 265431-265440
-2023/02/20 18:26:12 starting worker 0 with blocks 265421-265430
-2023/02/20 18:26:12 starting worker 3 with blocks 265441-265450
-2023/02/20 18:26:15 finished job for blocks: 265411 - 265420
-2023/02/20 18:26:15 starting worker 1 with blocks 265451-265460
-2023/02/20 18:26:15 finished job for blocks: 265431 - 265440
-2023/02/20 18:26:15 starting worker 2 with blocks 265461-265470
-2023/02/20 18:26:15 finished job for blocks: 265441 - 265450
-2023/02/20 18:26:15 starting worker 3 with blocks 265471-265480
-2023/02/20 18:26:15 finished job for blocks: 265421 - 265430
-2023/02/20 18:26:15 starting worker 0 with blocks 265481-265490
-2023/02/20 18:26:15 finished job for blocks: 265401 - 265410
-2023/02/20 18:26:15 starting worker 4 with blocks 265491-265500
-2023/02/20 18:26:16 finished job for blocks: 265451 - 265460
-2023/02/20 18:26:16 starting worker 1 with blocks 265501-265510
-2023/02/20 18:26:16 finished job for blocks: 265471 - 265480
-2023/02/20 18:26:16 starting worker 3 with blocks 265511-265520
-2023/02/20 18:26:16 finished job for blocks: 265491 - 265500
-2023/02/20 18:26:16 starting worker 4 with blocks 265521-265530
-2023/02/20 18:26:16 finished job for blocks: 265461 - 265470
-2023/02/20 18:26:16 starting worker 2 with blocks 265531-265540
-2023/02/20 18:26:16 finished job for blocks: 265481 - 265490
-2023/02/20 18:26:16 starting worker 0 with blocks 265541-265550
-2023/02/20 18:26:18 finished job for blocks: 265511 - 265520
-2023/02/20 18:26:18 finished job for blocks: 265531 - 265540
-2023/02/20 18:26:18 starting worker 3 with blocks 265551-265560
-2023/02/20 18:26:18 starting worker 2 with blocks 265561-265570
-2023/02/20 18:26:18 finished job for blocks: 265521 - 265530
-2023/02/20 18:26:18 starting worker 4 with blocks 265571-265580
-2023/02/20 18:26:18 finished job for blocks: 265501 - 265510
-2023/02/20 18:26:18 starting worker 1 with blocks 265581-265590
-2023/02/20 18:26:18 finished job for blocks: 265541 - 265550
-2023/02/20 18:26:18 starting worker 0 with blocks 265591-265600
-2023/02/20 18:26:19 finished job for blocks: 265551 - 265560
-2023/02/20 18:26:19 starting worker 3 with blocks 265601-265610
-2023/02/20 18:26:19 finished job for blocks: 265581 - 265590
-2023/02/20 18:26:19 starting worker 1 with blocks 265611-265620
+2023/02/20 19:02:51 starting worker 4 with blocks 265401-265900
+2023/02/20 19:02:51 starting worker 0 with blocks 266401-266900
+2023/02/20 19:02:51 starting worker 1 with blocks 265901-266400
+2023/02/20 19:02:51 starting worker 3 with blocks 266901-267400
+2023/02/20 19:02:51 starting worker 2 with blocks 267401-267900
+2023/02/20 19:03:42 finished job for blocks: 265901 - 266400
+2023/02/20 19:03:42 starting worker 1 with blocks 267901-268400
+2023/02/20 19:03:42 finished job for blocks: 266901 - 267400
+2023/02/20 19:03:42 starting worker 3 with blocks 268401-268900
+2023/02/20 19:03:42 finished job for blocks: 266401 - 266900
+2023/02/20 19:03:42 starting worker 0 with blocks 268901-269400
+2023/02/20 19:03:42 finished job for blocks: 265401 - 265900
+2023/02/20 19:03:42 starting worker 4 with blocks 269401-269900
+2023/02/20 19:03:42 finished job for blocks: 267401 - 267900
+2023/02/20 19:03:42 starting worker 2 with blocks 269901-270400
+2023/02/20 19:04:26 finished job for blocks: 267901 - 268400
+2023/02/20 19:04:26 starting worker 1 with blocks 270401-270900
+2023/02/20 19:04:26 finished job for blocks: 268901 - 269400
+2023/02/20 19:04:26 starting worker 0 with blocks 270901-271400
+2023/02/20 19:04:27 finished job for blocks: 268401 - 268900
+2023/02/20 19:04:27 starting worker 3 with blocks 271401-271900
+2023/02/20 19:04:27 finished job for blocks: 269401 - 269900
+2023/02/20 19:04:27 starting worker 4 with blocks 271901-272400
+2023/02/20 19:04:28 finished job for blocks: 269901 - 270400
+2023/02/20 19:04:28 starting worker 2 with blocks 272401-272900
+2023/02/20 19:05:19 finished job for blocks: 270401 - 270900
+2023/02/20 19:05:19 starting worker 1 with blocks 272901-273400
+2023/02/20 19:05:19 finished job for blocks: 270901 - 271400
+2023/02/20 19:05:19 starting worker 0 with blocks 273401-273900
+2023/02/20 19:05:20 finished job for blocks: 271401 - 271900
+2023/02/20 19:05:20 starting worker 3 with blocks 273901-274400
+2023/02/20 19:05:21 finished job for blocks: 271901 - 272400
+2023/02/20 19:05:21 starting worker 4 with blocks 274401-274900
+2023/02/20 19:05:21 finished job for blocks: 272401 - 272900
+2023/02/20 19:05:21 starting worker 2 with blocks 274901-275400
+2023/02/20 19:06:19 finished job for blocks: 272901 - 273400
+2023/02/20 19:06:19 starting worker 1 with blocks 275401-275900
+2023/02/20 19:06:20 finished job for blocks: 273401 - 273900
+2023/02/20 19:06:20 starting worker 0 with blocks 275901-276400
+2023/02/20 19:06:24 finished job for blocks: 273901 - 274400
+2023/02/20 19:06:24 starting worker 3 with blocks 276401-276900
+2023/02/20 19:06:26 finished job for blocks: 274401 - 274900
+2023/02/20 19:06:26 starting worker 4 with blocks 276901-277400
+2023/02/20 19:06:26 finished job for blocks: 274901 - 275400
+2023/02/20 19:06:26 starting worker 2 with blocks 277401-277900
+2023/02/20 19:07:10 finished job for blocks: 275901 - 276400
+2023/02/20 19:07:10 starting worker 0 with blocks 277901-278400
+2023/02/20 19:07:12 finished job for blocks: 275401 - 275900
+2023/02/20 19:07:12 starting worker 1 with blocks 278401-278900
+2023/02/20 19:07:14 finished job for blocks: 276401 - 276900
+2023/02/20 19:07:14 starting worker 3 with blocks 278901-279400
+2023/02/20 19:07:15 finished job for blocks: 276901 - 277400
+2023/02/20 19:07:15 starting worker 4 with blocks 279401-279900
+2023/02/20 19:07:16 finished job for blocks: 277401 - 277900
+2023/02/20 19:07:16 starting worker 2 with blocks 279901-280400
+2023/02/20 19:08:01 finished job for blocks: 277901 - 278400
+2023/02/20 19:08:01 starting worker 0 with blocks 280401-280900
+2023/02/20 19:08:02 finished job for blocks: 278401 - 278900
+2023/02/20 19:08:02 starting worker 1 with blocks 280901-281400
+2023/02/20 19:08:04 finished job for blocks: 278901 - 279400
+2023/02/20 19:08:04 starting worker 3 with blocks 281401-281900
+2023/02/20 19:08:06 finished job for blocks: 279401 - 279900
+2023/02/20 19:08:06 starting worker 4 with blocks 281901-282400
+2023/02/20 19:08:06 finished job for blocks: 279901 - 280400
+2023/02/20 19:08:06 starting worker 2 with blocks 282401-282900
+2023/02/20 19:08:50 finished job for blocks: 280401 - 280900
+2023/02/20 19:08:50 starting worker 0 with blocks 282901-283400
+2023/02/20 19:08:51 finished job for blocks: 280901 - 281400
+2023/02/20 19:08:51 starting worker 1 with blocks 283401-283900
+2023/02/20 19:08:54 finished job for blocks: 281401 - 281900
+2023/02/20 19:08:54 starting worker 3 with blocks 283901-284400
+2023/02/20 19:08:56 finished job for blocks: 282401 - 282900
+2023/02/20 19:08:56 starting worker 2 with blocks 284401-284900
+2023/02/20 19:08:56 finished job for blocks: 281901 - 282400
+2023/02/20 19:08:56 starting worker 4 with blocks 284901-285400
+2023/02/20 19:09:38 finished job for blocks: 282901 - 283400
+2023/02/20 19:09:38 starting worker 0 with blocks 285401-285900
+2023/02/20 19:09:39 finished job for blocks: 283401 - 283900
+2023/02/20 19:09:39 starting worker 1 with blocks 285901-286400
+2023/02/20 19:09:43 finished job for blocks: 283901 - 284400
+2023/02/20 19:09:43 starting worker 3 with blocks 286401-286900
+2023/02/20 19:09:44 finished job for blocks: 284401 - 284900
+2023/02/20 19:09:44 starting worker 2 with blocks 286901-287400
+2023/02/20 19:09:45 finished job for blocks: 284901 - 285400
+2023/02/20 19:09:45 starting worker 4 with blocks 287401-287900
+2023/02/20 19:10:32 finished job for blocks: 285401 - 285900
+2023/02/20 19:10:32 starting worker 0 with blocks 287901-288400
+2023/02/20 19:10:33 finished job for blocks: 285901 - 286400
+2023/02/20 19:10:33 starting worker 1 with blocks 288401-288900
+2023/02/20 19:10:38 finished job for blocks: 286401 - 286900
+2023/02/20 19:10:38 starting worker 3 with blocks 288901-289400
+2023/02/20 19:10:39 finished job for blocks: 287401 - 287900
+2023/02/20 19:10:39 starting worker 4 with blocks 289401-289900
+2023/02/20 19:10:39 finished job for blocks: 286901 - 287400
+2023/02/20 19:10:39 starting worker 2 with blocks 289901-290400
+2023/02/20 19:11:22 finished job for blocks: 287901 - 288400
+2023/02/20 19:11:22 starting worker 0 with blocks 290401-290900
+2023/02/20 19:11:23 finished job for blocks: 288401 - 288900
+2023/02/20 19:11:23 starting worker 1 with blocks 290901-291400
+2023/02/20 19:11:28 finished job for blocks: 288901 - 289400
+2023/02/20 19:11:28 starting worker 3 with blocks 291401-291900
+2023/02/20 19:11:30 finished job for blocks: 289901 - 290400
+2023/02/20 19:11:30 starting worker 2 with blocks 291901-292400
+2023/02/20 19:11:30 finished job for blocks: 289401 - 289900
+2023/02/20 19:11:30 starting worker 4 with blocks 292401-292900
+2023/02/20 19:12:15 finished job for blocks: 290401 - 290900
+2023/02/20 19:12:15 starting worker 0 with blocks 292901-293400
+2023/02/20 19:12:17 finished job for blocks: 290901 - 291400
+2023/02/20 19:12:17 starting worker 1 with blocks 293401-293900
+2023/02/20 19:12:21 finished job for blocks: 291401 - 291900
+2023/02/20 19:12:21 starting worker 3 with blocks 293901-294400
+2023/02/20 19:12:23 finished job for blocks: 291901 - 292400
+2023/02/20 19:12:23 starting worker 2 with blocks 294401-294900
+2023/02/20 19:12:23 finished job for blocks: 292401 - 292900
+2023/02/20 19:12:23 starting worker 4 with blocks 294901-295400
+2023/02/20 19:13:08 finished job for blocks: 292901 - 293400
+2023/02/20 19:13:08 starting worker 0 with blocks 295401-295900
+2023/02/20 19:13:10 finished job for blocks: 293401 - 293900
+2023/02/20 19:13:10 starting worker 1 with blocks 295901-296400
+2023/02/20 19:13:14 finished job for blocks: 293901 - 294400
+2023/02/20 19:13:14 starting worker 3 with blocks 296401-296900
+2023/02/20 19:13:16 finished job for blocks: 294901 - 295400
+2023/02/20 19:13:16 starting worker 4 with blocks 296901-297400
+2023/02/20 19:13:16 finished job for blocks: 294401 - 294900
+2023/02/20 19:13:16 starting worker 2 with blocks 297401-297900
+2023/02/20 19:14:19 finished job for blocks: 295401 - 295900
+2023/02/20 19:14:19 starting worker 0 with blocks 297901-298400
+2023/02/20 19:14:21 finished job for blocks: 295901 - 296400
+2023/02/20 19:14:21 starting worker 1 with blocks 298401-298900
+2023/02/20 19:14:25 finished job for blocks: 296401 - 296900
+2023/02/20 19:14:25 starting worker 3 with blocks 298901-299400
+2023/02/20 19:14:26 finished job for blocks: 297401 - 297900
+2023/02/20 19:14:26 starting worker 2 with blocks 299401-299900
+2023/02/20 19:14:27 finished job for blocks: 296901 - 297400
+2023/02/20 19:14:27 starting worker 4 with blocks 299901-300400
+2023/02/20 19:15:05 finished job for blocks: 297901 - 298400
+2023/02/20 19:15:05 starting worker 0 with blocks 300401-300900
+2023/02/20 19:15:07 finished job for blocks: 298401 - 298900
+2023/02/20 19:15:07 starting worker 1 with blocks 300901-301400
+2023/02/20 19:15:12 finished job for blocks: 298901 - 299400
+2023/02/20 19:15:12 starting worker 3 with blocks 301401-301900
+2023/02/20 19:15:13 finished job for blocks: 299401 - 299900
+2023/02/20 19:15:13 starting worker 2 with blocks 301901-302400
+2023/02/20 19:15:14 finished job for blocks: 299901 - 300400
+2023/02/20 19:15:14 starting worker 4 with blocks 302401-302900
+2023/02/20 19:16:09 finished job for blocks: 300401 - 300900
+2023/02/20 19:16:09 starting worker 0 with blocks 302901-303400
+2023/02/20 19:16:11 finished job for blocks: 300901 - 301400
+2023/02/20 19:16:11 starting worker 1 with blocks 303401-303900
+2023/02/20 19:16:16 finished job for blocks: 301401 - 301900
+2023/02/20 19:16:16 starting worker 3 with blocks 303901-304400
+2023/02/20 19:16:17 finished job for blocks: 301901 - 302400
+2023/02/20 19:16:17 starting worker 2 with blocks 304401-304900
+2023/02/20 19:16:17 finished job for blocks: 302401 - 302900
+2023/02/20 19:16:17 starting worker 4 with blocks 304901-305400
+2023/02/20 19:17:00 finished job for blocks: 302901 - 303400
+2023/02/20 19:17:00 starting worker 0 with blocks 305401-305900
+2023/02/20 19:17:02 finished job for blocks: 303401 - 303900
+2023/02/20 19:17:02 starting worker 1 with blocks 305901-306400
+2023/02/20 19:17:07 finished job for blocks: 303901 - 304400
+2023/02/20 19:17:07 starting worker 3 with blocks 306401-306900
+2023/02/20 19:17:08 finished job for blocks: 304401 - 304900
+2023/02/20 19:17:08 starting worker 2 with blocks 306901-307400
+2023/02/20 19:17:09 finished job for blocks: 304901 - 305400
+2023/02/20 19:17:09 starting worker 4 with blocks 307401-307900
+2023/02/20 19:17:52 finished job for blocks: 305401 - 305900
+2023/02/20 19:17:52 starting worker 0 with blocks 307901-308400
+2023/02/20 19:17:54 finished job for blocks: 305901 - 306400
+2023/02/20 19:17:54 starting worker 1 with blocks 308401-308900
+2023/02/20 19:17:58 finished job for blocks: 306401 - 306900
+2023/02/20 19:17:58 starting worker 3 with blocks 308901-309400
+2023/02/20 19:17:59 finished job for blocks: 306901 - 307400
+2023/02/20 19:17:59 starting worker 2 with blocks 309401-309900
+2023/02/20 19:18:00 finished job for blocks: 307401 - 307900
+2023/02/20 19:18:00 starting worker 4 with blocks 309901-310400
+2023/02/20 19:18:40 finished job for blocks: 307901 - 308400
+2023/02/20 19:18:40 starting worker 0 with blocks 310401-310900
+2023/02/20 19:18:42 finished job for blocks: 308401 - 308900
+2023/02/20 19:18:42 starting worker 1 with blocks 310901-311400
+2023/02/20 19:18:46 finished job for blocks: 308901 - 309400
+2023/02/20 19:18:47 starting worker 3 with blocks 311401-311900
+2023/02/20 19:18:49 finished job for blocks: 309401 - 309900
+2023/02/20 19:18:49 starting worker 2 with blocks 311901-312400
+2023/02/20 19:18:49 finished job for blocks: 309901 - 310400
+2023/02/20 19:18:49 starting worker 4 with blocks 312401-312900
+2023/02/20 19:19:28 finished job for blocks: 310401 - 310900
+2023/02/20 19:19:28 starting worker 0 with blocks 312901-313400
+2023/02/20 19:19:30 finished job for blocks: 310901 - 311400
+2023/02/20 19:19:30 starting worker 1 with blocks 313401-313900
+2023/02/20 19:19:35 finished job for blocks: 311401 - 311900
+2023/02/20 19:19:35 starting worker 3 with blocks 313901-314400
+2023/02/20 19:19:36 finished job for blocks: 311901 - 312400
+2023/02/20 19:19:36 starting worker 2 with blocks 314401-314900
+2023/02/20 19:19:36 finished job for blocks: 312401 - 312900
+2023/02/20 19:19:36 starting worker 4 with blocks 314901-315400
+2023/02/20 19:20:20 finished job for blocks: 312901 - 313400
+2023/02/20 19:20:20 starting worker 0 with blocks 315401-315900
+2023/02/20 19:20:22 finished job for blocks: 313401 - 313900
+2023/02/20 19:20:22 starting worker 1 with blocks 315901-316400
+2023/02/20 19:20:27 finished job for blocks: 313901 - 314400
+2023/02/20 19:20:27 starting worker 3 with blocks 316401-316900
+2023/02/20 19:20:28 finished job for blocks: 314401 - 314900
+2023/02/20 19:20:28 starting worker 2 with blocks 316901-317400
+2023/02/20 19:20:28 finished job for blocks: 314901 - 315400
+2023/02/20 19:20:28 starting worker 4 with blocks 317401-317900
+2023/02/20 19:21:08 finished job for blocks: 315401 - 315900
+2023/02/20 19:21:08 starting worker 0 with blocks 317901-318400
+2023/02/20 19:21:11 finished job for blocks: 315901 - 316400
+2023/02/20 19:21:11 starting worker 1 with blocks 318401-318900
+2023/02/20 19:21:15 finished job for blocks: 316901 - 317400
+2023/02/20 19:21:15 starting worker 2 with blocks 318901-319400
+2023/02/20 19:21:15 finished job for blocks: 316401 - 316900
+2023/02/20 19:21:15 starting worker 3 with blocks 319401-319900
+2023/02/20 19:21:16 finished job for blocks: 317401 - 317900
+2023/02/20 19:21:16 starting worker 4 with blocks 319901-320400
+2023/02/20 19:21:56 finished job for blocks: 317901 - 318400
+2023/02/20 19:21:56 starting worker 0 with blocks 320401-320900
+2023/02/20 19:21:59 finished job for blocks: 318401 - 318900
+2023/02/20 19:21:59 starting worker 1 with blocks 320901-321400
+2023/02/20 19:22:04 finished job for blocks: 318901 - 319400
+2023/02/20 19:22:04 starting worker 2 with blocks 321401-321900
+2023/02/20 19:22:04 finished job for blocks: 319401 - 319900
+2023/02/20 19:22:04 starting worker 3 with blocks 321901-322400
+2023/02/20 19:22:05 finished job for blocks: 319901 - 320400
+2023/02/20 19:22:05 starting worker 4 with blocks 322401-322900
+2023/02/20 19:22:45 finished job for blocks: 320401 - 320900
+2023/02/20 19:22:45 starting worker 0 with blocks 322901-323400
+2023/02/20 19:22:49 finished job for blocks: 320901 - 321400
+2023/02/20 19:22:49 starting worker 1 with blocks 323401-323900
+2023/02/20 19:22:54 finished job for blocks: 321401 - 321900
+2023/02/20 19:22:54 starting worker 2 with blocks 323901-324400
+2023/02/20 19:22:55 finished job for blocks: 321901 - 322400
+2023/02/20 19:22:55 starting worker 3 with blocks 324401-324900
+2023/02/20 19:22:56 finished job for blocks: 322401 - 322900
+2023/02/20 19:22:56 starting worker 4 with blocks 324901-325400
+2023/02/20 19:23:36 finished job for blocks: 322901 - 323400
+2023/02/20 19:23:36 starting worker 0 with blocks 325401-325900
+2023/02/20 19:23:39 finished job for blocks: 323401 - 323900
+2023/02/20 19:23:39 starting worker 1 with blocks 325901-326400
+2023/02/20 19:23:44 finished job for blocks: 323901 - 324400
+2023/02/20 19:23:44 starting worker 2 with blocks 326401-326900
+2023/02/20 19:23:44 finished job for blocks: 324401 - 324900
+2023/02/20 19:23:44 starting worker 3 with blocks 326901-327400
+2023/02/20 19:23:46 finished job for blocks: 324901 - 325400
+2023/02/20 19:23:46 starting worker 4 with blocks 327401-327900
+2023/02/20 19:24:27 finished job for blocks: 325401 - 325900
+2023/02/20 19:24:27 starting worker 0 with blocks 327901-328400
+2023/02/20 19:24:31 finished job for blocks: 325901 - 326400
+2023/02/20 19:24:31 starting worker 1 with blocks 328401-328900
+2023/02/20 19:24:34 finished job for blocks: 326901 - 327400
+2023/02/20 19:24:34 starting worker 3 with blocks 328901-329400
+2023/02/20 19:24:34 finished job for blocks: 326401 - 326900
+2023/02/20 19:24:34 starting worker 2 with blocks 329401-329900
+2023/02/20 19:24:36 finished job for blocks: 327401 - 327900
+2023/02/20 19:24:36 starting worker 4 with blocks 329901-330400
+2023/02/20 19:25:16 finished job for blocks: 327901 - 328400
+2023/02/20 19:25:16 starting worker 0 with blocks 330401-330900
+2023/02/20 19:25:19 finished job for blocks: 328401 - 328900
+2023/02/20 19:25:19 starting worker 1 with blocks 330901-331400
+2023/02/20 19:25:23 finished job for blocks: 329401 - 329900
+2023/02/20 19:25:24 starting worker 2 with blocks 331401-331900
+2023/02/20 19:25:24 finished job for blocks: 328901 - 329400
+2023/02/20 19:25:24 starting worker 3 with blocks 331901-332400
+2023/02/20 19:25:25 finished job for blocks: 329901 - 330400
+2023/02/20 19:25:25 starting worker 4 with blocks 332401-332900
+2023/02/20 19:26:04 finished job for blocks: 330401 - 330900
+2023/02/20 19:26:04 starting worker 0 with blocks 332901-333400
+2023/02/20 19:26:08 finished job for blocks: 330901 - 331400
+2023/02/20 19:26:08 starting worker 1 with blocks 333401-333900
+2023/02/20 19:26:13 finished job for blocks: 331401 - 331900
+2023/02/20 19:26:13 starting worker 2 with blocks 333901-334400
+2023/02/20 19:26:13 finished job for blocks: 331901 - 332400
+2023/02/20 19:26:13 starting worker 3 with blocks 334401-334900
+2023/02/20 19:26:13 finished job for blocks: 332401 - 332900
+2023/02/20 19:26:13 starting worker 4 with blocks 334901-335400
+2023/02/20 19:26:53 finished job for blocks: 332901 - 333400
+2023/02/20 19:26:53 starting worker 0 with blocks 335401-335900
+2023/02/20 19:26:55 finished job for blocks: 333401 - 333900
+2023/02/20 19:26:55 starting worker 1 with blocks 335901-336400
+2023/02/20 19:27:00 finished job for blocks: 333901 - 334400
+2023/02/20 19:27:00 starting worker 2 with blocks 336401-336900
+2023/02/20 19:27:01 finished job for blocks: 334401 - 334900
+2023/02/20 19:27:01 starting worker 3 with blocks 336901-337400
+2023/02/20 19:27:01 finished job for blocks: 334901 - 335400
+2023/02/20 19:27:01 starting worker 4 with blocks 337401-337900
+2023/02/20 19:27:44 finished job for blocks: 335401 - 335900
+2023/02/20 19:27:44 starting worker 0 with blocks 337901-338400
+2023/02/20 19:27:47 finished job for blocks: 335901 - 336400
+2023/02/20 19:27:47 starting worker 1 with blocks 338401-338900
+2023/02/20 19:27:53 finished job for blocks: 336901 - 337400
+2023/02/20 19:27:53 starting worker 3 with blocks 338901-339400
+2023/02/20 19:27:53 finished job for blocks: 336401 - 336900
+2023/02/20 19:27:53 starting worker 2 with blocks 339401-339900
+2023/02/20 19:27:53 finished job for blocks: 337401 - 337900
+2023/02/20 19:27:53 starting worker 4 with blocks 339901-340400
+2023/02/20 19:28:36 finished job for blocks: 337901 - 338400
+2023/02/20 19:28:36 starting worker 0 with blocks 340401-340900
+2023/02/20 19:28:39 finished job for blocks: 338401 - 338900
+2023/02/20 19:28:39 starting worker 1 with blocks 340901-341400
+2023/02/20 19:28:44 finished job for blocks: 338901 - 339400
+2023/02/20 19:28:44 starting worker 3 with blocks 341401-341900
+2023/02/20 19:28:45 finished job for blocks: 339401 - 339900
+2023/02/20 19:28:45 starting worker 2 with blocks 341901-342400
+2023/02/20 19:28:45 finished job for blocks: 339901 - 340400
+2023/02/20 19:28:45 starting worker 4 with blocks 342401-342900
+2023/02/20 19:29:26 finished job for blocks: 340401 - 340900
+2023/02/20 19:29:26 starting worker 0 with blocks 342901-343400
+2023/02/20 19:29:28 finished job for blocks: 340901 - 341400
+2023/02/20 19:29:28 starting worker 1 with blocks 343401-343900
+2023/02/20 19:29:33 finished job for blocks: 341901 - 342400
+2023/02/20 19:29:33 starting worker 2 with blocks 343901-344400
+2023/02/20 19:29:33 finished job for blocks: 341401 - 341900
+2023/02/20 19:29:33 starting worker 3 with blocks 344401-344900
+2023/02/20 19:29:34 finished job for blocks: 342401 - 342900
+2023/02/20 19:29:34 starting worker 4 with blocks 344901-345400
+2023/02/20 19:30:15 finished job for blocks: 342901 - 343400
+2023/02/20 19:30:15 starting worker 0 with blocks 345401-345900
+2023/02/20 19:30:17 finished job for blocks: 343401 - 343900
+2023/02/20 19:30:17 starting worker 1 with blocks 345901-346400
+2023/02/20 19:30:23 finished job for blocks: 344401 - 344900
+2023/02/20 19:30:23 starting worker 3 with blocks 346401-346900
+2023/02/20 19:30:24 finished job for blocks: 343901 - 344400
+2023/02/20 19:30:24 starting worker 2 with blocks 346901-347400
+2023/02/20 19:30:24 finished job for blocks: 344901 - 345400
+2023/02/20 19:30:24 starting worker 4 with blocks 347401-347900
+2023/02/20 19:31:06 finished job for blocks: 345401 - 345900
+2023/02/20 19:31:06 starting worker 0 with blocks 347901-348400
+2023/02/20 19:31:09 finished job for blocks: 345901 - 346400
+2023/02/20 19:31:09 starting worker 1 with blocks 348401-348900
+2023/02/20 19:31:15 finished job for blocks: 346401 - 346900
+2023/02/20 19:31:15 starting worker 3 with blocks 348901-349400
+2023/02/20 19:31:16 finished job for blocks: 346901 - 347400
+2023/02/20 19:31:16 starting worker 2 with blocks 349401-349900
+2023/02/20 19:31:17 finished job for blocks: 347401 - 347900
+2023/02/20 19:31:17 starting worker 4 with blocks 349901-350400
+2023/02/20 19:31:56 finished job for blocks: 347901 - 348400
+2023/02/20 19:31:56 starting worker 0 with blocks 350401-350900
+2023/02/20 19:31:59 finished job for blocks: 348401 - 348900
+2023/02/20 19:31:59 starting worker 1 with blocks 350901-351400
+2023/02/20 19:32:08 finished job for blocks: 348901 - 349400
+2023/02/20 19:32:08 starting worker 3 with blocks 351401-351900
+2023/02/20 19:32:09 finished job for blocks: 349401 - 349900
+2023/02/20 19:32:09 starting worker 2 with blocks 351901-352400
+2023/02/20 19:32:11 finished job for blocks: 349901 - 350400
+2023/02/20 19:32:11 starting worker 4 with blocks 352401-352900
+2023/02/20 19:32:56 finished job for blocks: 350401 - 350900
+2023/02/20 19:32:56 starting worker 0 with blocks 352901-353400
+2023/02/20 19:33:00 finished job for blocks: 350901 - 351400
+2023/02/20 19:33:00 starting worker 1 with blocks 353401-353670
+2023/02/20 19:33:05 finished job for blocks: 351401 - 351900
+2023/02/20 19:33:05 finished job for blocks: 351901 - 352400
+2023/02/20 19:33:06 finished job for blocks: 352401 - 352900
+2023/02/20 19:33:26 finished job for blocks: 353401 - 353670
+2023/02/20 19:33:45 finished job for blocks: 352901 - 353400
+2023/02/20 19:37:29 starting worker 4 with blocks 1026989-1027488
+2023/02/20 19:37:29 starting worker 1 with blocks 1027489-1027988
+2023/02/20 19:37:29 starting worker 0 with blocks 1028489-1028988
+2023/02/20 19:37:29 starting worker 2 with blocks 1027989-1028488
+2023/02/20 19:37:29 starting worker 3 with blocks 1028989-1029488
+2023/02/20 19:38:17 finished job for blocks: 1027489 - 1027988
+2023/02/20 19:38:17 starting worker 1 with blocks 1029489-1029988
+2023/02/20 19:38:19 finished job for blocks: 1027989 - 1028488
+2023/02/20 19:38:19 starting worker 2 with blocks 1029989-1030488
+2023/02/20 19:38:19 finished job for blocks: 1026989 - 1027488
+2023/02/20 19:38:19 starting worker 4 with blocks 1030489-1030988
+2023/02/20 19:38:19 finished job for blocks: 1028989 - 1029488
+2023/02/20 19:38:19 starting worker 3 with blocks 1030989-1031488
+2023/02/20 19:38:21 finished job for blocks: 1028489 - 1028988
+2023/02/20 19:38:21 starting worker 0 with blocks 1031489-1031988
+2023/02/20 19:39:06 finished job for blocks: 1029489 - 1029988
+2023/02/20 19:39:06 starting worker 1 with blocks 1031989-1032488
+2023/02/20 19:39:07 finished job for blocks: 1030489 - 1030988
+2023/02/20 19:39:07 starting worker 4 with blocks 1032489-1032988
+2023/02/20 19:39:09 finished job for blocks: 1030989 - 1031488
+2023/02/20 19:39:09 starting worker 3 with blocks 1032989-1033488
+2023/02/20 19:39:10 finished job for blocks: 1031489 - 1031988
+2023/02/20 19:39:10 starting worker 0 with blocks 1033489-1033988
+2023/02/20 19:39:11 finished job for blocks: 1029989 - 1030488
+2023/02/20 19:39:11 starting worker 2 with blocks 1033989-1034488
+2023/02/20 19:39:55 finished job for blocks: 1031989 - 1032488
+2023/02/20 19:39:55 starting worker 1 with blocks 1034489-1034988
+2023/02/20 19:39:57 finished job for blocks: 1032489 - 1032988
+2023/02/20 19:39:57 starting worker 4 with blocks 1034989-1035488
+2023/02/20 19:39:57 finished job for blocks: 1033489 - 1033988
+2023/02/20 19:39:57 starting worker 0 with blocks 1035489-1035988
+2023/02/20 19:39:58 finished job for blocks: 1032989 - 1033488
+2023/02/20 19:39:58 starting worker 3 with blocks 1035989-1036488
+2023/02/20 19:40:00 finished job for blocks: 1033989 - 1034488
+2023/02/20 19:40:00 starting worker 2 with blocks 1036489-1036988
+2023/02/20 19:40:42 finished job for blocks: 1034489 - 1034988
+2023/02/20 19:40:42 starting worker 1 with blocks 1036989-1037488
+2023/02/20 19:40:42 finished job for blocks: 1034989 - 1035488
+2023/02/20 19:40:42 starting worker 4 with blocks 1037489-1037988
+2023/02/20 19:40:44 finished job for blocks: 1035489 - 1035988
+2023/02/20 19:40:44 starting worker 0 with blocks 1037989-1038488
+2023/02/20 19:40:45 finished job for blocks: 1036489 - 1036988
+2023/02/20 19:40:45 starting worker 2 with blocks 1038489-1038988
+2023/02/20 19:40:46 finished job for blocks: 1035989 - 1036488
+2023/02/20 19:40:46 starting worker 3 with blocks 1038989-1039488
+2023/02/20 19:41:29 finished job for blocks: 1037989 - 1038488
+2023/02/20 19:41:29 starting worker 0 with blocks 1039489-1039988
+2023/02/20 19:41:30 finished job for blocks: 1036989 - 1037488
+2023/02/20 19:41:30 starting worker 1 with blocks 1039989-1040488
+2023/02/20 19:41:30 finished job for blocks: 1037489 - 1037988
+2023/02/20 19:41:30 starting worker 4 with blocks 1040489-1040988
+2023/02/20 19:41:33 finished job for blocks: 1038489 - 1038988
+2023/02/20 19:41:33 starting worker 2 with blocks 1040989-1041488
+2023/02/20 19:41:33 finished job for blocks: 1038989 - 1039488
+2023/02/20 19:41:33 starting worker 3 with blocks 1041489-1041988
+2023/02/20 19:42:38 finished job for blocks: 1039489 - 1039988
+2023/02/20 19:42:38 starting worker 0 with blocks 1041989-1042488
+2023/02/20 19:42:39 finished job for blocks: 1039989 - 1040488
+2023/02/20 19:42:39 starting worker 1 with blocks 1042489-1042988
+2023/02/20 19:42:40 finished job for blocks: 1040489 - 1040988
+2023/02/20 19:42:40 starting worker 4 with blocks 1042989-1043488
+2023/02/20 19:42:42 finished job for blocks: 1040989 - 1041488
+2023/02/20 19:42:42 starting worker 2 with blocks 1043489-1043988
+2023/02/20 19:42:44 finished job for blocks: 1041489 - 1041988
+2023/02/20 19:42:44 starting worker 3 with blocks 1043989-1044488
+2023/02/20 19:43:11 finished job for blocks: 1041989 - 1042488
+2023/02/20 19:43:11 starting worker 0 with blocks 1044489-1044988
+2023/02/20 19:43:12 finished job for blocks: 1042489 - 1042988
+2023/02/20 19:43:12 starting worker 1 with blocks 1044989-1045488
+2023/02/20 19:43:13 finished job for blocks: 1042989 - 1043488
+2023/02/20 19:43:13 starting worker 4 with blocks 1045489-1045988
+2023/02/20 19:43:15 finished job for blocks: 1043489 - 1043988
+2023/02/20 19:43:15 starting worker 2 with blocks 1045989-1046488
+2023/02/20 19:43:16 finished job for blocks: 1043989 - 1044488
+2023/02/20 19:43:16 starting worker 3 with blocks 1046489-1046988
+2023/02/20 19:43:43 finished job for blocks: 1044489 - 1044988
+2023/02/20 19:43:43 starting worker 0 with blocks 1046989-1047488
+2023/02/20 19:43:44 finished job for blocks: 1044989 - 1045488
+2023/02/20 19:43:44 starting worker 1 with blocks 1047489-1047988
+2023/02/20 19:43:45 finished job for blocks: 1045489 - 1045988
+2023/02/20 19:43:45 starting worker 4 with blocks 1047989-1048488
+2023/02/20 19:43:49 finished job for blocks: 1045989 - 1046488
+2023/02/20 19:43:49 starting worker 2 with blocks 1048489-1048988
+2023/02/20 19:43:50 finished job for blocks: 1046489 - 1046988
+2023/02/20 19:43:50 starting worker 3 with blocks 1048989-1049488
+2023/02/20 19:44:18 finished job for blocks: 1047489 - 1047988
+2023/02/20 19:44:18 starting worker 1 with blocks 1049489-1049988
+2023/02/20 19:44:19 finished job for blocks: 1046989 - 1047488
+2023/02/20 19:44:19 starting worker 0 with blocks 1049989-1050488
+2023/02/20 19:44:19 finished job for blocks: 1047989 - 1048488
+2023/02/20 19:44:19 starting worker 4 with blocks 1050489-1050988
+2023/02/20 19:44:22 finished job for blocks: 1048489 - 1048988
+2023/02/20 19:44:22 starting worker 2 with blocks 1050989-1051488
+2023/02/20 19:44:23 finished job for blocks: 1048989 - 1049488
+2023/02/20 19:44:23 starting worker 3 with blocks 1051489-1051988
+2023/02/20 19:44:51 finished job for blocks: 1049489 - 1049988
+2023/02/20 19:44:51 starting worker 1 with blocks 1051989-1052488
+2023/02/20 19:44:53 finished job for blocks: 1050489 - 1050988
+2023/02/20 19:44:53 starting worker 4 with blocks 1052489-1052988
+2023/02/20 19:44:53 finished job for blocks: 1049989 - 1050488
+2023/02/20 19:44:53 starting worker 0 with blocks 1052989-1053488
+2023/02/20 19:44:56 finished job for blocks: 1050989 - 1051488
+2023/02/20 19:44:56 starting worker 2 with blocks 1053489-1053988
+2023/02/20 19:44:57 finished job for blocks: 1051489 - 1051988
+2023/02/20 19:44:57 starting worker 3 with blocks 1053989-1054488
+2023/02/20 19:45:24 finished job for blocks: 1051989 - 1052488
+2023/02/20 19:45:24 starting worker 1 with blocks 1054489-1054988
+2023/02/20 19:45:26 finished job for blocks: 1052489 - 1052988
+2023/02/20 19:45:26 finished job for blocks: 1052989 - 1053488
+2023/02/20 19:45:26 starting worker 4 with blocks 1054989-1055488
+2023/02/20 19:45:26 starting worker 0 with blocks 1055489-1055988
+2023/02/20 19:45:29 finished job for blocks: 1053489 - 1053988
+2023/02/20 19:45:29 starting worker 2 with blocks 1055989-1056488
+2023/02/20 19:45:30 finished job for blocks: 1053989 - 1054488
+2023/02/20 19:45:30 starting worker 3 with blocks 1056489-1056988
+2023/02/20 19:45:55 finished job for blocks: 1054489 - 1054988
+2023/02/20 19:45:55 starting worker 1 with blocks 1056989-1057488
+2023/02/20 19:45:57 finished job for blocks: 1054989 - 1055488
+2023/02/20 19:45:57 starting worker 4 with blocks 1057489-1057988
+2023/02/20 19:45:58 finished job for blocks: 1055489 - 1055988
+2023/02/20 19:45:58 starting worker 0 with blocks 1057989-1058488
+2023/02/20 19:46:00 finished job for blocks: 1055989 - 1056488
+2023/02/20 19:46:00 starting worker 2 with blocks 1058489-1058988
+2023/02/20 19:46:01 finished job for blocks: 1056489 - 1056988
+2023/02/20 19:46:01 starting worker 3 with blocks 1058989-1059488
+2023/02/20 19:46:28 finished job for blocks: 1056989 - 1057488
+2023/02/20 19:46:28 starting worker 1 with blocks 1059489-1059988
+2023/02/20 19:46:30 finished job for blocks: 1057489 - 1057988
+2023/02/20 19:46:30 starting worker 4 with blocks 1059989-1060488
+2023/02/20 19:46:30 finished job for blocks: 1057989 - 1058488
+2023/02/20 19:46:30 starting worker 0 with blocks 1060489-1060988
+2023/02/20 19:46:32 finished job for blocks: 1058489 - 1058988
+2023/02/20 19:46:32 starting worker 2 with blocks 1060989-1061488
+2023/02/20 19:46:34 finished job for blocks: 1058989 - 1059488
+2023/02/20 19:46:34 starting worker 3 with blocks 1061489-1061988
+2023/02/20 19:46:59 finished job for blocks: 1059489 - 1059988
+2023/02/20 19:46:59 starting worker 1 with blocks 1061989-1062488
+2023/02/20 19:47:02 finished job for blocks: 1059989 - 1060488
+2023/02/20 19:47:02 starting worker 4 with blocks 1062489-1062988
+2023/02/20 19:47:02 finished job for blocks: 1060489 - 1060988
+2023/02/20 19:47:02 starting worker 0 with blocks 1062989-1063488
+2023/02/20 19:47:04 finished job for blocks: 1060989 - 1061488
+2023/02/20 19:47:04 starting worker 2 with blocks 1063489-1063988
+2023/02/20 19:47:05 finished job for blocks: 1061489 - 1061988
+2023/02/20 19:47:05 starting worker 3 with blocks 1063989-1064488
+2023/02/20 19:47:32 finished job for blocks: 1061989 - 1062488
+2023/02/20 19:47:32 starting worker 1 with blocks 1064489-1064988
+2023/02/20 19:47:34 finished job for blocks: 1062489 - 1062988
+2023/02/20 19:47:34 starting worker 4 with blocks 1064989-1065488
+2023/02/20 19:47:34 finished job for blocks: 1062989 - 1063488
+2023/02/20 19:47:34 starting worker 0 with blocks 1065489-1065988
+2023/02/20 19:47:36 finished job for blocks: 1063489 - 1063988
+2023/02/20 19:47:36 starting worker 2 with blocks 1065989-1066488
+2023/02/20 19:47:38 finished job for blocks: 1063989 - 1064488
+2023/02/20 19:47:38 starting worker 3 with blocks 1066489-1066988
+2023/02/20 19:48:04 finished job for blocks: 1064489 - 1064988
+2023/02/20 19:48:04 starting worker 1 with blocks 1066989-1067488
+2023/02/20 19:48:06 finished job for blocks: 1064989 - 1065488
+2023/02/20 19:48:06 starting worker 4 with blocks 1067489-1067988
+2023/02/20 19:48:07 finished job for blocks: 1065489 - 1065988
+2023/02/20 19:48:07 starting worker 0 with blocks 1067989-1068488
+2023/02/20 19:48:09 finished job for blocks: 1065989 - 1066488
+2023/02/20 19:48:09 starting worker 2 with blocks 1068489-1068988
+2023/02/20 19:48:10 finished job for blocks: 1066489 - 1066988
+2023/02/20 19:48:10 starting worker 3 with blocks 1068989-1069488
+2023/02/20 19:48:37 finished job for blocks: 1066989 - 1067488
+2023/02/20 19:48:37 starting worker 1 with blocks 1069489-1069988
+2023/02/20 19:48:39 finished job for blocks: 1067489 - 1067988
+2023/02/20 19:48:39 starting worker 4 with blocks 1069989-1070488
+2023/02/20 19:48:39 finished job for blocks: 1067989 - 1068488
+2023/02/20 19:48:39 starting worker 0 with blocks 1070489-1070988
+2023/02/20 19:48:41 finished job for blocks: 1068489 - 1068988
+2023/02/20 19:48:41 starting worker 2 with blocks 1070989-1071488
+2023/02/20 19:48:43 finished job for blocks: 1068989 - 1069488
+2023/02/20 19:48:43 starting worker 3 with blocks 1071489-1071988
+2023/02/20 19:49:09 finished job for blocks: 1069489 - 1069988
+2023/02/20 19:49:09 starting worker 1 with blocks 1071989-1072488
+2023/02/20 19:49:11 finished job for blocks: 1070489 - 1070988
+2023/02/20 19:49:11 starting worker 0 with blocks 1072489-1072988
+2023/02/20 19:49:11 finished job for blocks: 1069989 - 1070488
+2023/02/20 19:49:11 starting worker 4 with blocks 1072989-1073488
+2023/02/20 19:49:14 finished job for blocks: 1070989 - 1071488
+2023/02/20 19:49:14 starting worker 2 with blocks 1073489-1073988
+2023/02/20 19:49:15 finished job for blocks: 1071489 - 1071988
+2023/02/20 19:49:15 starting worker 3 with blocks 1073989-1074488
+2023/02/20 19:49:42 finished job for blocks: 1071989 - 1072488
+2023/02/20 19:49:42 starting worker 1 with blocks 1074489-1074988
+2023/02/20 19:49:44 finished job for blocks: 1072489 - 1072988
+2023/02/20 19:49:44 starting worker 0 with blocks 1074989-1075488
+2023/02/20 19:49:45 finished job for blocks: 1072989 - 1073488
+2023/02/20 19:49:45 starting worker 4 with blocks 1075489-1075988
+2023/02/20 19:49:47 finished job for blocks: 1073489 - 1073988
+2023/02/20 19:49:47 starting worker 2 with blocks 1075989-1076488
+2023/02/20 19:49:48 finished job for blocks: 1073989 - 1074488
+2023/02/20 19:49:48 starting worker 3 with blocks 1076489-1076988
+2023/02/20 19:50:16 finished job for blocks: 1074489 - 1074988
+2023/02/20 19:50:16 starting worker 1 with blocks 1076989-1077488
+2023/02/20 19:50:17 finished job for blocks: 1074989 - 1075488
+2023/02/20 19:50:17 starting worker 0 with blocks 1077489-1077988
+2023/02/20 19:50:17 finished job for blocks: 1075489 - 1075988
+2023/02/20 19:50:17 starting worker 4 with blocks 1077989-1078488
+2023/02/20 19:50:21 finished job for blocks: 1075989 - 1076488
+2023/02/20 19:50:21 starting worker 2 with blocks 1078489-1078988
+2023/02/20 19:50:22 finished job for blocks: 1076489 - 1076988
+2023/02/20 19:50:22 starting worker 3 with blocks 1078989-1079488
+2023/02/20 19:50:49 finished job for blocks: 1076989 - 1077488
+2023/02/20 19:50:49 starting worker 1 with blocks 1079489-1079988
+2023/02/20 19:50:51 finished job for blocks: 1077489 - 1077988
+2023/02/20 19:50:51 starting worker 0 with blocks 1079989-1080488
+2023/02/20 19:50:51 finished job for blocks: 1077989 - 1078488
+2023/02/20 19:50:51 starting worker 4 with blocks 1080489-1080988
+2023/02/20 19:50:54 finished job for blocks: 1078489 - 1078988
+2023/02/20 19:50:54 starting worker 2 with blocks 1080989-1081488
+2023/02/20 19:50:56 finished job for blocks: 1078989 - 1079488
+2023/02/20 19:50:56 starting worker 3 with blocks 1081489-1081988
+2023/02/20 19:51:23 finished job for blocks: 1079489 - 1079988
+2023/02/20 19:51:23 starting worker 1 with blocks 1081989-1082488
+2023/02/20 19:51:25 finished job for blocks: 1079989 - 1080488
+2023/02/20 19:51:25 starting worker 0 with blocks 1082489-1082988
+2023/02/20 19:51:25 finished job for blocks: 1080489 - 1080988
+2023/02/20 19:51:25 starting worker 4 with blocks 1082989-1083488
+2023/02/20 19:51:28 finished job for blocks: 1080989 - 1081488
+2023/02/20 19:51:28 starting worker 2 with blocks 1083489-1083988
+2023/02/20 19:51:30 finished job for blocks: 1081489 - 1081988
+2023/02/20 19:51:30 starting worker 3 with blocks 1083989-1084488
+2023/02/20 19:51:56 finished job for blocks: 1081989 - 1082488
+2023/02/20 19:51:56 starting worker 1 with blocks 1084489-1084988
+2023/02/20 19:51:58 finished job for blocks: 1082989 - 1083488
+2023/02/20 19:51:58 starting worker 4 with blocks 1084989-1085488
+2023/02/20 19:51:58 finished job for blocks: 1082489 - 1082988
+2023/02/20 19:51:58 starting worker 0 with blocks 1085489-1085988
+2023/02/20 19:52:01 finished job for blocks: 1083489 - 1083988
+2023/02/20 19:52:01 starting worker 2 with blocks 1085989-1086488
+2023/02/20 19:52:02 finished job for blocks: 1083989 - 1084488
+2023/02/20 19:52:02 starting worker 3 with blocks 1086489-1086988
+2023/02/20 19:52:29 finished job for blocks: 1084489 - 1084988
+2023/02/20 19:52:29 starting worker 1 with blocks 1086989-1087488
+2023/02/20 19:52:30 finished job for blocks: 1084989 - 1085488
+2023/02/20 19:52:30 starting worker 4 with blocks 1087489-1087988
+2023/02/20 19:52:30 finished job for blocks: 1085489 - 1085988
+2023/02/20 19:52:30 starting worker 0 with blocks 1087989-1088488
+2023/02/20 19:52:33 finished job for blocks: 1085989 - 1086488
+2023/02/20 19:52:33 starting worker 2 with blocks 1088489-1088988
+2023/02/20 19:52:35 finished job for blocks: 1086489 - 1086988
+2023/02/20 19:52:35 starting worker 3 with blocks 1088989-1089488
+2023/02/20 19:53:01 finished job for blocks: 1086989 - 1087488
+2023/02/20 19:53:01 starting worker 1 with blocks 1089489-1089988
+2023/02/20 19:53:03 finished job for blocks: 1087489 - 1087988
+2023/02/20 19:53:03 starting worker 4 with blocks 1089989-1090488
+2023/02/20 19:53:04 finished job for blocks: 1087989 - 1088488
+2023/02/20 19:53:04 starting worker 0 with blocks 1090489-1090988
+2023/02/20 19:53:06 finished job for blocks: 1088489 - 1088988
+2023/02/20 19:53:06 starting worker 2 with blocks 1090989-1091488
+2023/02/20 19:53:08 finished job for blocks: 1088989 - 1089488
+2023/02/20 19:53:08 starting worker 3 with blocks 1091489-1091988
+2023/02/20 19:53:35 finished job for blocks: 1089489 - 1089988
+2023/02/20 19:53:35 starting worker 1 with blocks 1091989-1092488
+2023/02/20 19:53:40 finished job for blocks: 1090489 - 1090988
+2023/02/20 19:53:40 starting worker 0 with blocks 1092489-1092988
+2023/02/20 19:53:40 finished job for blocks: 1089989 - 1090488
+2023/02/20 19:53:40 starting worker 4 with blocks 1092989-1093488
+2023/02/20 19:53:43 finished job for blocks: 1090989 - 1091488
+2023/02/20 19:53:43 starting worker 2 with blocks 1093489-1093988
+2023/02/20 19:53:45 finished job for blocks: 1091489 - 1091988
+2023/02/20 19:53:45 starting worker 3 with blocks 1093989-1094488
+2023/02/20 19:54:12 finished job for blocks: 1091989 - 1092488
+2023/02/20 19:54:12 starting worker 1 with blocks 1094489-1094988
+2023/02/20 19:54:17 finished job for blocks: 1092989 - 1093488
+2023/02/20 19:54:17 starting worker 4 with blocks 1094989-1095488
+2023/02/20 19:54:18 finished job for blocks: 1092489 - 1092988
+2023/02/20 19:54:18 starting worker 0 with blocks 1095489-1095988
+2023/02/20 19:54:19 finished job for blocks: 1093489 - 1093988
+2023/02/20 19:54:19 starting worker 2 with blocks 1095989-1096488
+2023/02/20 19:54:19 finished job for blocks: 1093989 - 1094488
+2023/02/20 19:54:19 starting worker 3 with blocks 1096489-1096988
+2023/02/20 19:54:46 finished job for blocks: 1094489 - 1094988
+2023/02/20 19:54:46 starting worker 1 with blocks 1096989-1097488
+2023/02/20 19:54:50 finished job for blocks: 1094989 - 1095488
+2023/02/20 19:54:50 starting worker 4 with blocks 1097489-1097988
+2023/02/20 19:54:52 finished job for blocks: 1095489 - 1095988
+2023/02/20 19:54:52 starting worker 0 with blocks 1097989-1098488
+2023/02/20 19:54:52 finished job for blocks: 1095989 - 1096488
+2023/02/20 19:54:52 starting worker 2 with blocks 1098489-1098988
+2023/02/20 19:54:53 finished job for blocks: 1096489 - 1096988
+2023/02/20 19:54:53 starting worker 3 with blocks 1098989-1099488
+2023/02/20 19:55:20 finished job for blocks: 1096989 - 1097488
+2023/02/20 19:55:20 starting worker 1 with blocks 1099489-1099988
+2023/02/20 19:55:24 finished job for blocks: 1097489 - 1097988
+2023/02/20 19:55:24 starting worker 4 with blocks 1099989-1100488
+2023/02/20 19:55:25 finished job for blocks: 1097989 - 1098488
+2023/02/20 19:55:25 starting worker 0 with blocks 1100489-1100988
+2023/02/20 19:55:26 finished job for blocks: 1098489 - 1098988
+2023/02/20 19:55:26 starting worker 2 with blocks 1100989-1101488
+2023/02/20 19:55:26 finished job for blocks: 1098989 - 1099488
+2023/02/20 19:55:26 starting worker 3 with blocks 1101489-1101988
+2023/02/20 19:55:53 finished job for blocks: 1099489 - 1099988
+2023/02/20 19:55:53 starting worker 1 with blocks 1101989-1102488
+2023/02/20 19:55:58 finished job for blocks: 1099989 - 1100488
+2023/02/20 19:55:58 starting worker 4 with blocks 1102489-1102988
+2023/02/20 19:55:59 finished job for blocks: 1100489 - 1100988
+2023/02/20 19:55:59 starting worker 0 with blocks 1102989-1103488
+2023/02/20 19:56:00 finished job for blocks: 1101489 - 1101988
+2023/02/20 19:56:00 starting worker 3 with blocks 1103489-1103988
+2023/02/20 19:56:00 finished job for blocks: 1100989 - 1101488
+2023/02/20 19:56:00 starting worker 2 with blocks 1103989-1104488
+2023/02/20 19:56:27 finished job for blocks: 1101989 - 1102488
+2023/02/20 19:56:27 starting worker 1 with blocks 1104489-1104988
+2023/02/20 19:56:31 finished job for blocks: 1102489 - 1102988
+2023/02/20 19:56:31 starting worker 4 with blocks 1104989-1105488
+2023/02/20 19:56:32 finished job for blocks: 1102989 - 1103488
+2023/02/20 19:56:32 starting worker 0 with blocks 1105489-1105988
+2023/02/20 19:56:32 finished job for blocks: 1103489 - 1103988
+2023/02/20 19:56:32 starting worker 3 with blocks 1105989-1106488
+2023/02/20 19:56:33 finished job for blocks: 1103989 - 1104488
+2023/02/20 19:56:33 starting worker 2 with blocks 1106489-1106988
+2023/02/20 19:57:00 finished job for blocks: 1104489 - 1104988
+2023/02/20 19:57:00 starting worker 1 with blocks 1106989-1107488
+2023/02/20 19:57:03 finished job for blocks: 1104989 - 1105488
+2023/02/20 19:57:03 starting worker 4 with blocks 1107489-1107988
+2023/02/20 19:57:05 finished job for blocks: 1105989 - 1106488
+2023/02/20 19:57:05 starting worker 3 with blocks 1107989-1108488
+2023/02/20 19:57:05 finished job for blocks: 1105489 - 1105988
+2023/02/20 19:57:05 starting worker 0 with blocks 1108489-1108988
+2023/02/20 19:57:05 finished job for blocks: 1106489 - 1106988
+2023/02/20 19:57:05 starting worker 2 with blocks 1108989-1109488
+2023/02/20 19:57:32 finished job for blocks: 1106989 - 1107488
+2023/02/20 19:57:32 starting worker 1 with blocks 1109489-1109988
+2023/02/20 19:57:36 finished job for blocks: 1107489 - 1107988
+2023/02/20 19:57:36 starting worker 4 with blocks 1109989-1110488
+2023/02/20 19:57:37 finished job for blocks: 1108489 - 1108988
+2023/02/20 19:57:37 starting worker 0 with blocks 1110489-1110988
+2023/02/20 19:57:37 finished job for blocks: 1107989 - 1108488
+2023/02/20 19:57:37 starting worker 3 with blocks 1110989-1111488
+2023/02/20 19:57:37 finished job for blocks: 1108989 - 1109488
+2023/02/20 19:57:37 starting worker 2 with blocks 1111489-1111988
+2023/02/20 19:58:05 finished job for blocks: 1109489 - 1109988
+2023/02/20 19:58:05 starting worker 1 with blocks 1111989-1112488
+2023/02/20 19:58:08 finished job for blocks: 1109989 - 1110488
+2023/02/20 19:58:08 starting worker 4 with blocks 1112489-1112988
+2023/02/20 19:58:10 finished job for blocks: 1110489 - 1110988
+2023/02/20 19:58:10 starting worker 0 with blocks 1112989-1113488
+2023/02/20 19:58:10 finished job for blocks: 1111489 - 1111988
+2023/02/20 19:58:10 starting worker 2 with blocks 1113489-1113988
+2023/02/20 19:58:10 finished job for blocks: 1110989 - 1111488
+2023/02/20 19:58:10 starting worker 3 with blocks 1113989-1114488
+2023/02/20 19:58:38 finished job for blocks: 1111989 - 1112488
+2023/02/20 19:58:38 starting worker 1 with blocks 1114489-1114988
+2023/02/20 19:58:41 finished job for blocks: 1112489 - 1112988
+2023/02/20 19:58:41 starting worker 4 with blocks 1114989-1115488
+2023/02/20 19:58:42 finished job for blocks: 1112989 - 1113488
+2023/02/20 19:58:42 starting worker 0 with blocks 1115489-1115988
+2023/02/20 19:58:42 finished job for blocks: 1113489 - 1113988
+2023/02/20 19:58:42 starting worker 2 with blocks 1115989-1116488
+2023/02/20 19:58:43 finished job for blocks: 1113989 - 1114488
+2023/02/20 19:58:43 starting worker 3 with blocks 1116489-1116988
+2023/02/20 19:59:11 finished job for blocks: 1114489 - 1114988
+2023/02/20 19:59:11 starting worker 1 with blocks 1116989-1117488
+2023/02/20 19:59:14 finished job for blocks: 1114989 - 1115488
+2023/02/20 19:59:14 starting worker 4 with blocks 1117489-1117988
+2023/02/20 19:59:16 finished job for blocks: 1115489 - 1115988
+2023/02/20 19:59:16 starting worker 0 with blocks 1117989-1118488
+2023/02/20 19:59:16 finished job for blocks: 1115989 - 1116488
+2023/02/20 19:59:16 starting worker 2 with blocks 1118489-1118988
+2023/02/20 19:59:17 finished job for blocks: 1116489 - 1116988
+2023/02/20 19:59:17 starting worker 3 with blocks 1118989-1119488
+2023/02/20 19:59:44 finished job for blocks: 1116989 - 1117488
+2023/02/20 19:59:44 starting worker 1 with blocks 1119489-1119988
+2023/02/20 19:59:48 finished job for blocks: 1117489 - 1117988
+2023/02/20 19:59:48 starting worker 4 with blocks 1119989-1120488
+2023/02/20 19:59:49 finished job for blocks: 1117989 - 1118488
+2023/02/20 19:59:49 starting worker 0 with blocks 1120489-1120988
+2023/02/20 19:59:49 finished job for blocks: 1118489 - 1118988
+2023/02/20 19:59:49 starting worker 2 with blocks 1120989-1121488
+2023/02/20 19:59:50 finished job for blocks: 1118989 - 1119488
+2023/02/20 19:59:50 starting worker 3 with blocks 1121489-1121988
+2023/02/20 20:00:17 finished job for blocks: 1119489 - 1119988
+2023/02/20 20:00:17 starting worker 1 with blocks 1121989-1122488
+2023/02/20 20:00:20 finished job for blocks: 1119989 - 1120488
+2023/02/20 20:00:20 starting worker 4 with blocks 1122489-1122988
+2023/02/20 20:00:22 finished job for blocks: 1120489 - 1120988
+2023/02/20 20:00:22 starting worker 0 with blocks 1122989-1123488
+2023/02/20 20:00:22 finished job for blocks: 1121489 - 1121988
+2023/02/20 20:00:22 starting worker 3 with blocks 1123489-1123988
+2023/02/20 20:00:22 finished job for blocks: 1120989 - 1121488
+2023/02/20 20:00:22 starting worker 2 with blocks 1123989-1124488
+2023/02/20 20:00:50 finished job for blocks: 1121989 - 1122488
+2023/02/20 20:00:50 starting worker 1 with blocks 1124489-1124988
+2023/02/20 20:00:53 finished job for blocks: 1122489 - 1122988
+2023/02/20 20:00:53 starting worker 4 with blocks 1124989-1125488
+2023/02/20 20:00:55 finished job for blocks: 1122989 - 1123488
+2023/02/20 20:00:55 starting worker 0 with blocks 1125489-1125988
+2023/02/20 20:00:55 finished job for blocks: 1123989 - 1124488
+2023/02/20 20:00:55 starting worker 2 with blocks 1125989-1126488
+2023/02/20 20:00:55 finished job for blocks: 1123489 - 1123988
+2023/02/20 20:00:55 starting worker 3 with blocks 1126489-1126988
+2023/02/20 20:01:23 finished job for blocks: 1124489 - 1124988
+2023/02/20 20:01:23 starting worker 1 with blocks 1126989-1127488
+2023/02/20 20:01:26 finished job for blocks: 1124989 - 1125488
+2023/02/20 20:01:26 starting worker 4 with blocks 1127489-1127988
+2023/02/20 20:01:28 finished job for blocks: 1125989 - 1126488
+2023/02/20 20:01:28 starting worker 2 with blocks 1127989-1128488
+2023/02/20 20:01:28 finished job for blocks: 1126489 - 1126988
+2023/02/20 20:01:28 starting worker 3 with blocks 1128489-1128988
+2023/02/20 20:01:28 finished job for blocks: 1125489 - 1125988
+2023/02/20 20:01:28 starting worker 0 with blocks 1128989-1129488
+2023/02/20 20:01:56 finished job for blocks: 1126989 - 1127488
+2023/02/20 20:01:56 starting worker 1 with blocks 1129489-1129988
+2023/02/20 20:01:58 finished job for blocks: 1127489 - 1127988
+2023/02/20 20:01:58 starting worker 4 with blocks 1129989-1130488
+2023/02/20 20:02:00 finished job for blocks: 1128989 - 1129488
+2023/02/20 20:02:00 starting worker 0 with blocks 1130489-1130988
+2023/02/20 20:02:00 finished job for blocks: 1127989 - 1128488
+2023/02/20 20:02:00 starting worker 2 with blocks 1130989-1131488
+2023/02/20 20:02:00 finished job for blocks: 1128489 - 1128988
+2023/02/20 20:02:00 starting worker 3 with blocks 1131489-1131988
+2023/02/20 20:02:28 finished job for blocks: 1129489 - 1129988
+2023/02/20 20:02:28 starting worker 1 with blocks 1131989-1132488
+2023/02/20 20:02:31 finished job for blocks: 1129989 - 1130488
+2023/02/20 20:02:31 starting worker 4 with blocks 1132489-1132988
+2023/02/20 20:02:33 finished job for blocks: 1130489 - 1130988
+2023/02/20 20:02:33 starting worker 0 with blocks 1132989-1133488
+2023/02/20 20:02:33 finished job for blocks: 1130989 - 1131488
+2023/02/20 20:02:33 starting worker 2 with blocks 1133489-1133988
+2023/02/20 20:02:33 finished job for blocks: 1131489 - 1131988
+2023/02/20 20:02:33 starting worker 3 with blocks 1133989-1134488
+2023/02/20 20:03:00 finished job for blocks: 1131989 - 1132488
+2023/02/20 20:03:00 starting worker 1 with blocks 1134489-1134988
+2023/02/20 20:03:03 finished job for blocks: 1132489 - 1132988
+2023/02/20 20:03:03 starting worker 4 with blocks 1134989-1135488
+2023/02/20 20:03:05 finished job for blocks: 1132989 - 1133488
+2023/02/20 20:03:05 starting worker 0 with blocks 1135489-1135988
+2023/02/20 20:03:05 finished job for blocks: 1133489 - 1133988
+2023/02/20 20:03:05 starting worker 2 with blocks 1135989-1136488
+2023/02/20 20:03:06 finished job for blocks: 1133989 - 1134488
+2023/02/20 20:03:06 starting worker 3 with blocks 1136489-1136988
+2023/02/20 20:03:34 finished job for blocks: 1134489 - 1134988
+2023/02/20 20:03:34 starting worker 1 with blocks 1136989-1137488
+2023/02/20 20:03:36 finished job for blocks: 1134989 - 1135488
+2023/02/20 20:03:36 starting worker 4 with blocks 1137489-1137988
+2023/02/20 20:03:37 finished job for blocks: 1135489 - 1135988
+2023/02/20 20:03:37 starting worker 0 with blocks 1137989-1138488
+2023/02/20 20:03:40 finished job for blocks: 1135989 - 1136488
+2023/02/20 20:03:40 starting worker 2 with blocks 1138489-1138988
+2023/02/20 20:03:43 finished job for blocks: 1136489 - 1136988
+2023/02/20 20:03:43 starting worker 3 with blocks 1138989-1139488
+2023/02/20 20:04:09 finished job for blocks: 1136989 - 1137488
+2023/02/20 20:04:09 starting worker 1 with blocks 1139489-1139988
+2023/02/20 20:04:11 finished job for blocks: 1137489 - 1137988
+2023/02/20 20:04:11 starting worker 4 with blocks 1139989-1140488
+2023/02/20 20:04:12 finished job for blocks: 1137989 - 1138488
+2023/02/20 20:04:12 starting worker 0 with blocks 1140489-1140988
+2023/02/20 20:04:14 finished job for blocks: 1138489 - 1138988
+2023/02/20 20:04:14 starting worker 2 with blocks 1140989-1141488
+2023/02/20 20:04:16 finished job for blocks: 1138989 - 1139488
+2023/02/20 20:04:16 starting worker 3 with blocks 1141489-1141988
+2023/02/20 20:04:42 finished job for blocks: 1139489 - 1139988
+2023/02/20 20:04:42 starting worker 1 with blocks 1141989-1142488
+2023/02/20 20:04:44 finished job for blocks: 1139989 - 1140488
+2023/02/20 20:04:44 starting worker 4 with blocks 1142489-1142988
+2023/02/20 20:04:47 finished job for blocks: 1140489 - 1140988
+2023/02/20 20:04:47 starting worker 0 with blocks 1142989-1143488
+2023/02/20 20:04:47 finished job for blocks: 1140989 - 1141488
+2023/02/20 20:04:47 starting worker 2 with blocks 1143489-1143988
+2023/02/20 20:04:50 finished job for blocks: 1141489 - 1141988
+2023/02/20 20:04:50 starting worker 3 with blocks 1143989-1144488
+2023/02/20 20:05:16 finished job for blocks: 1141989 - 1142488
+2023/02/20 20:05:16 starting worker 1 with blocks 1144489-1144988
+2023/02/20 20:05:18 finished job for blocks: 1142489 - 1142988
+2023/02/20 20:05:18 starting worker 4 with blocks 1144989-1145488
+2023/02/20 20:05:20 finished job for blocks: 1143489 - 1143988
+2023/02/20 20:05:20 starting worker 2 with blocks 1145489-1145988
+2023/02/20 20:05:20 finished job for blocks: 1142989 - 1143488
+2023/02/20 20:05:20 starting worker 0 with blocks 1145989-1146488
+2023/02/20 20:05:23 finished job for blocks: 1143989 - 1144488
+2023/02/20 20:05:23 starting worker 3 with blocks 1146489-1146988
+2023/02/20 20:05:48 finished job for blocks: 1144489 - 1144988
+2023/02/20 20:05:48 starting worker 1 with blocks 1146989-1147488
+2023/02/20 20:05:50 finished job for blocks: 1144989 - 1145488
+2023/02/20 20:05:50 starting worker 4 with blocks 1147489-1147988
+2023/02/20 20:05:52 finished job for blocks: 1145489 - 1145988
+2023/02/20 20:05:52 starting worker 2 with blocks 1147989-1148488
+2023/02/20 20:05:53 finished job for blocks: 1145989 - 1146488
+2023/02/20 20:05:53 starting worker 0 with blocks 1148489-1148988
+2023/02/20 20:05:55 finished job for blocks: 1146489 - 1146988
+2023/02/20 20:05:55 starting worker 3 with blocks 1148989-1149488
+2023/02/20 20:06:23 finished job for blocks: 1146989 - 1147488
+2023/02/20 20:06:23 starting worker 1 with blocks 1149489-1149988
+2023/02/20 20:06:24 finished job for blocks: 1147489 - 1147988
+2023/02/20 20:06:24 starting worker 4 with blocks 1149989-1150488
+2023/02/20 20:06:27 finished job for blocks: 1148489 - 1148988
+2023/02/20 20:06:27 starting worker 0 with blocks 1150489-1150988
+2023/02/20 20:06:27 finished job for blocks: 1147989 - 1148488
+2023/02/20 20:06:27 starting worker 2 with blocks 1150989-1151488
+2023/02/20 20:06:30 finished job for blocks: 1148989 - 1149488
+2023/02/20 20:06:30 starting worker 3 with blocks 1151489-1151988
+2023/02/20 20:08:12 Error http request block_results?height=1149930 Get "https://tendermint.bd.evmos.org:26657/block_results?height=1149930": read tcp 192.168.4.22:57464->204.16.244.108:26657: read: connection reset by peer
+2023/02/20 20:08:12 Error http request block_results?height=1150413 Get "https://tendermint.bd.evmos.org:26657/block_results?height=1150413": read tcp 192.168.4.22:57464->204.16.244.108:26657: read: connection reset by peer
+2023/02/20 20:08:12 Error http request block_results?height=1150875 Get "https://tendermint.bd.evmos.org:26657/block_results?height=1150875": read tcp 192.168.4.22:57464->204.16.244.108:26657: read: connection reset by peer
+2023/02/20 20:08:12 Error http request block_results?height=1151370 Get "https://tendermint.bd.evmos.org:26657/block_results?height=1151370": read tcp 192.168.4.22:57464->204.16.244.108:26657: read: connection reset by peer
+2023/02/20 20:08:12 Error http request block_results?height=1151826 Get "https://tendermint.bd.evmos.org:26657/block_results?height=1151826": read tcp 192.168.4.22:57464->204.16.244.108:26657: read: connection reset by peer
+2023/02/20 20:08:16 finished job for blocks: 1149489 - 1149988
+2023/02/20 20:08:16 starting worker 1 with blocks 1151989-1152488
+2023/02/20 20:08:17 finished job for blocks: 1149989 - 1150488
+2023/02/20 20:08:17 starting worker 4 with blocks 1152489-1152988
+2023/02/20 20:08:20 finished job for blocks: 1150489 - 1150988
+2023/02/20 20:08:20 starting worker 0 with blocks 1152989-1153488
+2023/02/20 20:08:20 finished job for blocks: 1150989 - 1151488
+2023/02/20 20:08:20 starting worker 2 with blocks 1153489-1153988
+2023/02/20 20:08:23 finished job for blocks: 1151489 - 1151988
+2023/02/20 20:08:23 starting worker 3 with blocks 1153989-1154488
+2023/02/20 20:08:53 finished job for blocks: 1151989 - 1152488
+2023/02/20 20:08:53 starting worker 1 with blocks 1154489-1154988
+2023/02/20 20:08:54 finished job for blocks: 1152489 - 1152988
+2023/02/20 20:08:54 starting worker 4 with blocks 1154989-1155488
+2023/02/20 20:08:57 finished job for blocks: 1152989 - 1153488
+2023/02/20 20:08:57 starting worker 0 with blocks 1155489-1155988
+2023/02/20 20:08:58 finished job for blocks: 1153489 - 1153988
+2023/02/20 20:08:58 starting worker 2 with blocks 1155989-1156488
+2023/02/20 20:09:00 finished job for blocks: 1153989 - 1154488
+2023/02/20 20:09:00 starting worker 3 with blocks 1156489-1156988
+2023/02/20 20:09:26 finished job for blocks: 1154489 - 1154988
+2023/02/20 20:09:26 starting worker 1 with blocks 1156989-1157488
+2023/02/20 20:09:27 finished job for blocks: 1154989 - 1155488
+2023/02/20 20:09:27 starting worker 4 with blocks 1157489-1157988
+2023/02/20 20:09:29 finished job for blocks: 1155489 - 1155988
+2023/02/20 20:09:29 starting worker 0 with blocks 1157989-1158488
+2023/02/20 20:09:30 finished job for blocks: 1155989 - 1156488
+2023/02/20 20:09:30 starting worker 2 with blocks 1158489-1158988
+2023/02/20 20:09:33 finished job for blocks: 1156489 - 1156988
+2023/02/20 20:09:33 starting worker 3 with blocks 1158989-1159488
+2023/02/20 20:09:59 finished job for blocks: 1156989 - 1157488
+2023/02/20 20:09:59 starting worker 1 with blocks 1159489-1159988
+2023/02/20 20:10:00 finished job for blocks: 1157489 - 1157988
+2023/02/20 20:10:00 starting worker 4 with blocks 1159989-1160488
+2023/02/20 20:10:02 finished job for blocks: 1157989 - 1158488
+2023/02/20 20:10:02 starting worker 0 with blocks 1160489-1160988
+2023/02/20 20:10:03 finished job for blocks: 1158489 - 1158988
+2023/02/20 20:10:03 starting worker 2 with blocks 1160989-1161488
+2023/02/20 20:10:06 finished job for blocks: 1158989 - 1159488
+2023/02/20 20:10:06 starting worker 3 with blocks 1161489-1161988
+2023/02/20 20:10:32 finished job for blocks: 1159489 - 1159988
+2023/02/20 20:10:32 starting worker 1 with blocks 1161989-1162488
+2023/02/20 20:10:32 finished job for blocks: 1159989 - 1160488
+2023/02/20 20:10:32 starting worker 4 with blocks 1162489-1162988
+2023/02/20 20:10:35 finished job for blocks: 1160489 - 1160988
+2023/02/20 20:10:35 starting worker 0 with blocks 1162989-1163488
+2023/02/20 20:10:35 finished job for blocks: 1160989 - 1161488
+2023/02/20 20:10:35 starting worker 2 with blocks 1163489-1163988
+2023/02/20 20:10:39 finished job for blocks: 1161489 - 1161988
+2023/02/20 20:10:39 starting worker 3 with blocks 1163989-1164452
+2023/02/20 20:11:05 finished job for blocks: 1161989 - 1162488
+2023/02/20 20:11:05 finished job for blocks: 1162489 - 1162988
+2023/02/20 20:11:08 finished job for blocks: 1162989 - 1163488
+2023/02/20 20:11:08 finished job for blocks: 1163489 - 1163988
+2023/02/20 20:11:09 finished job for blocks: 1163989 - 1164452
