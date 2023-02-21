@@ -16,9 +16,9 @@ import (
 )
 
 const (
-	FromBlock  = 265401 // Block from which to start querying
-	ToBlock    = 353670 // Last block to query
-	BatchSize  = 10     // Amount of blocks per thread
+	FromBlock  = 1026989 // Block from which to start querying
+	ToBlock    = 1164452// Last block to query
+	BatchSize  = 500     // Amount of blocks per thread
 	MaxWorkers = 5      // Amount of threads
 )
 
@@ -31,8 +31,8 @@ func main() {
 	defer db.Close()
 
 	// Create en databases
-	dblib.CreateMergeAccountTable(db)
-	dblib.CreateMigrateAccountTable(db)
+	dblib.CreateMergedEventTable(db)
+	dblib.CreateClaimEventTable(db)
 	dblib.CreateErrorTable(db)
 
 	// Set up context with cancellation
@@ -210,28 +210,28 @@ func insertIntoDB(ctx context.Context, db *sql.DB, migratedAccounts []dblib.Clai
 	defer tx.Rollback()
 
 	// Insert data into merge_table Table
-	stmt1, err := dblib.PrepareInsertMergeAccountQuery(ctx, tx)
+	stmt1, err := dblib.PrepareInsertMergeEventQuery(ctx, tx)
 	if err != nil {
 		return fmt.Errorf("error preparing statement for Table1: %v", err)
 	}
 	defer stmt1.Close()
 
 	// Insert data into migrated_account table
-	stmt2, err := dblib.PrepareInsertMigratedAccountQuery(ctx, tx)
+	stmt2, err := dblib.PrepareInsertClaimEventQuery(ctx, tx)
 	if err != nil {
 		return fmt.Errorf("error preparing statement for Table2: %v", err)
 	}
 	defer stmt2.Close()
 
 	for _, d := range mergedAccount {
-		err := dblib.ExecContextMergedAccount(ctx, stmt1, d)
+		err := dblib.ExecContextMergedEvent(ctx, stmt1, d)
 		if err != nil {
 			return fmt.Errorf("error inserting data into Table1: %v", err)
 		}
 	}
 
 	for _, d := range migratedAccounts {
-		err := dblib.ExecContextMigratedAccount(ctx, stmt2, d)
+		err := dblib.ExecContextClaimEvent(ctx, stmt2, d)
 		if err != nil {
 			return fmt.Errorf("error inserting data into Table1: %v", err)
 		}
