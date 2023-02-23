@@ -1,14 +1,15 @@
 package db
 
-type MergedEvents struct {
+type MergedEvent struct {
 	ID                int
 	Recipient         string
+	Sender            string
 	ClaimedCoins      string
 	FundCommunityPool string
 	Height            string
 }
 
-type ClaimEvents struct {
+type ClaimEvent struct {
 	ID     int
 	Sender string
 	Action string

@@ -28,6 +28,7 @@ func CreateMergedEventTable(db *sql.DB) {
 	   create table if not exists merged_event (
 	    id integer not null primary key,
 	    recipient text,
+        sender text,
         height text,
         claimed_coins text,
         fund_community_pool_coins text
@@ -73,6 +74,23 @@ func PrepareInsertMergeEventQuery(ctx context.Context, tx *sql.Tx) (*sql.Stmt, e
 	return insertAccount, nil
 }
 
+func PrepareUpdateSenderMergeEventQuery(ctx context.Context, tx *sql.Tx) (*sql.Stmt, error) {
+	updateSender, err := tx.PrepareContext(ctx, "UPDATE merged_event SET sender =  ? WHERE id = ?")
+	if err != nil {
+		fmt.Printf("Error preparing transaction: %q", err)
+		return nil, err
+	}
+	return updateSender, nil
+}
+
+func ExecContextMergeEventUpdate(ctx context.Context, stmt *sql.Stmt, event MergedEvent) error {
+	_, err := stmt.ExecContext(ctx, event.Sender, event.ID)
+	if err != nil {
+		return fmt.Errorf("error inserting data into MergedAccount: %v", err)
+	}
+	return nil
+}
+
 func ExecContextError(ctx context.Context, stmt *sql.Stmt, error Error) error {
 	// Insert data into Error
 	_, err := stmt.ExecContext(ctx, error.Height, error.EventType, error.TxIndex, error.EventIndex)
@@ -82,7 +100,7 @@ func ExecContextError(ctx context.Context, stmt *sql.Stmt, error Error) error {
 	return nil
 }
 
-func ExecContextMergedEvent(ctx context.Context, stmt *sql.Stmt, account MergedEvents) error {
+func ExecContextMergedEvent(ctx context.Context, stmt *sql.Stmt, account MergedEvent) error {
 	// Insert data into Table1
 	_, err := stmt.ExecContext(ctx, account.Recipient, account.Height, account.ClaimedCoins, account.FundCommunityPool)
 	if err != nil {
@@ -100,7 +118,7 @@ func PrepareInsertClaimEventQuery(ctx context.Context, tx *sql.Tx) (*sql.Stmt, e
 	return insertAccount, nil
 }
 
-func ExecContextClaimEvent(ctx context.Context, stmt *sql.Stmt, account ClaimEvents) error {
+func ExecContextClaimEvent(ctx context.Context, stmt *sql.Stmt, account ClaimEvent) error {
 	// Insert data into Table1
 	_, err := stmt.ExecContext(ctx, account.Sender, account.Height, account.Amount, account.Action)
 	if err != nil {
