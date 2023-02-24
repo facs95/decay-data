@@ -17,6 +17,18 @@ type ClaimEvent struct {
 	Height string
 }
 
+type DecayAmount struct {
+	ID                     int
+	Sender                 string
+	VoteAction             string
+	DelegateAction         string
+	EVMAction              string
+	IBCAction              string
+	TotalClaimed           string
+	TotalLost              string
+	InitialClaimableAmount string
+}
+
 type Error struct {
 	ID         int
 	Height     string

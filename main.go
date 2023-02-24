@@ -30,5 +30,9 @@ func main() {
 		handler.CollectEvents(fromBlock, toBlock)
 	} else if os.Args[1] == "collect-merge-senders" {
 		handler.CollectMergeSenders()
+	} else if os.Args[1] == "calculate-decay-loss" {
+		handler.DecayLostAmounts()
+	} else {
+		panic("Invalid argument provided. Please provide either 'collect-events' or 'collect-merge-senders'")
 	}
 }

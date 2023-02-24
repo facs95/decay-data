@@ -38,8 +38,27 @@ type Attribute struct {
 }
 
 type PacketData struct {
-  Amount   string `json:"amount"`
-  Denom    string `json:"denom"`
-  Receiver string `json:"receiver"`
-  Sender   string `json:"sender"`
+	Amount   string `json:"amount"`
+	Denom    string `json:"denom"`
+	Receiver string `json:"receiver"`
+	Sender   string `json:"sender"`
+}
+
+// Genesis data
+type Genesis struct {
+	AppState AppState `json:"app_state"`
+}
+
+type AppState struct {
+	Claims Claims `json:"claims"`
+}
+
+type Claims struct {
+	ClaimsRecords []ClaimsRecord `json:"claims_records"`
+}
+
+type ClaimsRecord struct {
+	Address              string `json:"address"`
+	ActionsCompleted     []bool `json:"actions_completed"`
+	InialClaimableAmount string `json:"initial_claimable_amount"`
 }

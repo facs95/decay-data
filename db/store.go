@@ -7,6 +7,10 @@ import (
 	"golang.org/x/net/context"
 )
 
+type DB struct {
+	db *sql.DB
+}
+
 func CreateErrorTable(db *sql.DB) {
 	sqlStmt := `
 	   create table if not exists error (
@@ -56,6 +60,26 @@ func CreateClaimEventTable(db *sql.DB) {
 	}
 }
 
+func CreateDecayAmountTable(db *sql.DB) {
+	sqlStmt := `
+	   create table if not exists decay_amount (
+	    id integer not null primary key,
+        sender text,
+        vote_action text,
+        ibc_action text,
+        delegate_action text,
+        evm_action text,
+        total_claimed text,
+        total_lost text,
+        initial_claimable_amount text
+	);`
+	_, err := db.Exec(sqlStmt)
+	if err != nil {
+		fmt.Printf("Error executing the table creation: %q", err)
+		panic("Stop processing")
+	}
+}
+
 func PrepareInsertErrorQuery(ctx context.Context, tx *sql.Tx) (*sql.Stmt, error) {
 	insertError, err := tx.PrepareContext(ctx, "insert into error(height, event_type, tx_index, event_index) values(?,?,?,?)")
 	if err != nil {
@@ -63,6 +87,16 @@ func PrepareInsertErrorQuery(ctx context.Context, tx *sql.Tx) (*sql.Stmt, error)
 		return nil, err
 	}
 	return insertError, nil
+}
+
+// PrepareInsertDecayAmountQuery prepares the insert query for decay_amount table
+func PrepareInsertDecayAmountQuery(ctx context.Context, tx *sql.Tx) (*sql.Stmt, error) {
+	insertAccount, err := tx.PrepareContext(ctx, "insert into decay_amount(sender, vote_action, ibc_action, delegate_action, evm_action, total_claimed, total_lost, initial_claimable_amount) values(?,?,?,?,?,?,?,?)")
+	if err != nil {
+		fmt.Printf("Error preparing transaction: %q", err)
+		return nil, err
+	}
+	return insertAccount, nil
 }
 
 func PrepareInsertMergeEventQuery(ctx context.Context, tx *sql.Tx) (*sql.Stmt, error) {
@@ -81,6 +115,16 @@ func PrepareUpdateSenderMergeEventQuery(ctx context.Context, tx *sql.Tx) (*sql.S
 		return nil, err
 	}
 	return updateSender, nil
+}
+
+// ExecContextDecayAmount executes the insert query for decay_amount table
+func ExecContextDecayAmount(ctx context.Context, stmt *sql.Stmt, account DecayAmount) error {
+	// Insert data into Table1
+	_, err := stmt.ExecContext(ctx, account.Sender, account.VoteAction, account.IBCAction, account.DelegateAction, account.EVMAction, account.TotalClaimed, account.TotalLost, account.InitialClaimableAmount)
+	if err != nil {
+		return fmt.Errorf("error inserting data into DecayAmount: %v", err)
+	}
+	return nil
 }
 
 func ExecContextMergeEventUpdate(ctx context.Context, stmt *sql.Stmt, event MergedEvent) error {
