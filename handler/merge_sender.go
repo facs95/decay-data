@@ -7,6 +7,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"strconv"
 	"sync"
 
 	dblib "github.com/facs95/decay-data/db"
@@ -41,7 +42,7 @@ func CollectMergeSenders() {
 
 	for rows.Next() {
 		var address string
-		var height string
+		var height int
 		var id int
 		var claimedCoins string
 		var fundCommunityPoolCoins string
@@ -159,7 +160,7 @@ func copySliceOfStructs(s []dblib.MergedEvent) []dblib.MergedEvent {
 func processBatchOfEvents(events []dblib.MergedEvent) []dblib.MergedEvent {
 	queueOfEventsToUpdate := []dblib.MergedEvent{}
 	for _, event := range events {
-		blockResult, err := query.GetBlockResult(event.Height, 0)
+		blockResult, err := query.GetBlockResult(strconv.Itoa(event.Height), 0)
 		if err != nil {
 			log.Printf("error getting block result: %v", err)
 			continue

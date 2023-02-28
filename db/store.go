@@ -15,7 +15,7 @@ func CreateErrorTable(db *sql.DB) {
 	sqlStmt := `
 	   create table if not exists error (
 	    id integer not null primary key,
-	    height text,
+	    height int,
         event_type text
         tx_index text
         event_index text
@@ -33,7 +33,7 @@ func CreateMergedEventTable(db *sql.DB) {
 	    id integer not null primary key,
 	    recipient text,
         sender text,
-        height text,
+        height int,
         claimed_coins text,
         fund_community_pool_coins text
 	);`
@@ -49,7 +49,7 @@ func CreateClaimEventTable(db *sql.DB) {
 	   create table if not exists claim_event (
 	    id integer not null primary key,
         sender text,
-        height text,
+        height int,
         amount text,
         claim_action text
 	);`

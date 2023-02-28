@@ -13,7 +13,7 @@ func main() {
 	}
 
 	if os.Args[1] == "collect-events" {
-		if len(os.Args) != 3 {
+		if len(os.Args) != 4 {
 			panic("Not enough arguments provided. Please provide block range to query")
 		}
 

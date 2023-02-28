@@ -18,8 +18,8 @@ import (
 const (
 	//FromBlock  = 1026989 // Block from which to start querying
 	//ToBlock    = 1164452 // Last block to query
-	BatchSize  = 100 // Amount of blocks per thread
-	MaxWorkers = 5   // Amount of threads
+	BatchSize  = 1000 // Amount of blocks per thread
+	MaxWorkers = 5    // Amount of threads
 )
 
 func CollectEvents(fromBlock int, toBlock int) {
@@ -98,9 +98,8 @@ func handleWorkers(ctx context.Context, db *sql.DB, fromBlock, toBlock, batchSiz
 
 func processBatchOfBlocks(ctx context.Context, db *sql.DB, job []int) ([]dblib.MergedEvent, []dblib.ClaimEvent) {
 	mergedEvents, migratedEvents := []dblib.MergedEvent{}, []dblib.ClaimEvent{}
-	for j := job[0]; j <= job[1]; j++ {
-		height := strconv.Itoa(j)
-		blockResult, err := query.GetBlockResult(height, 0)
+	for height := job[0]; height <= job[1]; height++ {
+		blockResult, err := query.GetBlockResult(strconv.Itoa(height), 0)
 		if err != nil {
 			// This should be on Error database
 			error := dblib.Error{
@@ -112,7 +111,7 @@ func processBatchOfBlocks(ctx context.Context, db *sql.DB, job []int) ([]dblib.M
 			log.Printf("error querying external resource at height %v: %v", height, err)
 			continue
 		}
-		merged, migrated := filterAndDecodeEvents(blockResult.Result.TxsResults, j)
+		merged, migrated := filterAndDecodeEvents(blockResult.Result.TxsResults, height)
 		mergedEvents = append(mergedEvents, merged...)
 		migratedEvents = append(migratedEvents, migrated...)
 	}
@@ -138,7 +137,7 @@ func filterAndDecodeEvents(txs []query.ResponseDeliverTx, height int) ([]dblib.M
 					continue
 				}
 				mergeRecord := dblib.MergedEvent{
-					Height:            strconv.Itoa(height),
+					Height:            height,
 					Recipient:         v.Attributes[0].Value,
 					ClaimedCoins:      v.Attributes[1].Value,
 					FundCommunityPool: v.Attributes[2].Value,
@@ -156,7 +155,7 @@ func filterAndDecodeEvents(txs []query.ResponseDeliverTx, height int) ([]dblib.M
 					continue
 				}
 				migratedAccount := dblib.ClaimEvent{
-					Height: strconv.Itoa(height),
+					Height: height,
 					Sender: v.Attributes[0].Value,
 					Amount: v.Attributes[1].Value,
 					Action: v.Attributes[2].Value,

@@ -6,7 +6,7 @@ type MergedEvent struct {
 	Sender            string
 	ClaimedCoins      string
 	FundCommunityPool string
-	Height            string
+	Height            int
 }
 
 type ClaimEvent struct {
@@ -14,7 +14,7 @@ type ClaimEvent struct {
 	Sender string
 	Action string
 	Amount string
-	Height string
+	Height int
 }
 
 type DecayAmount struct {
@@ -27,12 +27,12 @@ type DecayAmount struct {
 	TotalClaimed           string
 	TotalLost              string
 	InitialClaimableAmount string
-	TotalLostEvmos        float64
+	TotalLostEvmos         float64
 }
 
 type Error struct {
 	ID         int
-	Height     string
+	Height     int
 	EventType  string
 	TxIndex    string
 	EventIndex string
