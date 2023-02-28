@@ -137,6 +137,12 @@ func handleProcesses(ctx context.Context, db *sql.DB) error {
 
 			addressToChange.TotalClaimed = totalClaimable
 			addressToChange.TotalLost = totalLost
+
+			totalLostEvmos, err := calculateTotalLostEvmos(totalLost)
+			if err != nil {
+				log.Printf("Error calculating total lost evmos for address %s: %v", sender, err)
+			}
+			addressToChange.TotalLostEvmos = totalLostEvmos
 		} else {
 			claimRecord, ok := genesisClaimRecords[sender]
 			if !ok {
@@ -172,6 +178,12 @@ func handleProcesses(ctx context.Context, db *sql.DB) error {
 				log.Printf("Error calculating total lost for address %s: %v", sender, err)
 			}
 			addressToChange.TotalLost = totalLost
+
+			totalLostEvmos, err := calculateTotalLostEvmos(totalLost)
+			if err != nil {
+				log.Printf("Error calculating total lost evmos for address %s: %v", sender, err)
+			}
+			addressToChange.TotalLostEvmos = totalLostEvmos
 		}
 
 		decayAmounts[sender] = addressToChange
@@ -187,6 +199,22 @@ func handleProcesses(ctx context.Context, db *sql.DB) error {
 
 	// create a tx and submit it to the db
 	return nil
+}
+
+func calculateTotalLostEvmos(totalLost string) (float64, error) {
+	if totalLost == "" {
+		return 0, fmt.Errorf("total lost is empty")
+	}
+	floatLost := big.NewFloat(0)
+	floatLost, ok := floatLost.SetString(totalLost)
+	if !ok {
+		return 0, fmt.Errorf("Error converting amount to big float")
+	}
+	reducedBig := big.NewInt(0)
+	reducedBig.Exp(big.NewInt(10), big.NewInt(18), nil)
+	floatLost = floatLost.Quo(floatLost, big.NewFloat(0).SetInt(reducedBig))
+	am, _ := floatLost.Float64()
+	return am, nil
 }
 
 // calculateLost calculates the amount lost by action

@@ -14,7 +14,7 @@ func main() {
 
 	if os.Args[1] == "collect-events" {
 		if len(os.Args) != 3 {
-			panic("Not enough arguments provided. Please block range to query")
+			panic("Not enough arguments provided. Please provide block range to query")
 		}
 
 		fromBlock, err := strconv.Atoi(os.Args[2])

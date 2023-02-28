@@ -27,6 +27,7 @@ type DecayAmount struct {
 	TotalClaimed           string
 	TotalLost              string
 	InitialClaimableAmount string
+	TotalLostEvmos        float64
 }
 
 type Error struct {

@@ -71,7 +71,8 @@ func CreateDecayAmountTable(db *sql.DB) {
         evm_action text,
         total_claimed text,
         total_lost text,
-        initial_claimable_amount text
+        initial_claimable_amount text,
+        total_lost_evmos float
 	);`
 	_, err := db.Exec(sqlStmt)
 	if err != nil {
@@ -91,7 +92,7 @@ func PrepareInsertErrorQuery(ctx context.Context, tx *sql.Tx) (*sql.Stmt, error)
 
 // PrepareInsertDecayAmountQuery prepares the insert query for decay_amount table
 func PrepareInsertDecayAmountQuery(ctx context.Context, tx *sql.Tx) (*sql.Stmt, error) {
-	insertAccount, err := tx.PrepareContext(ctx, "insert into decay_amount(sender, vote_action, ibc_action, delegate_action, evm_action, total_claimed, total_lost, initial_claimable_amount) values(?,?,?,?,?,?,?,?)")
+	insertAccount, err := tx.PrepareContext(ctx, "insert into decay_amount(sender, vote_action, ibc_action, delegate_action, evm_action, total_claimed, total_lost, initial_claimable_amount, total_lost_evmos) values(?,?,?,?,?,?,?,?,?)")
 	if err != nil {
 		fmt.Printf("Error preparing transaction: %q", err)
 		return nil, err
@@ -120,7 +121,7 @@ func PrepareUpdateSenderMergeEventQuery(ctx context.Context, tx *sql.Tx) (*sql.S
 // ExecContextDecayAmount executes the insert query for decay_amount table
 func ExecContextDecayAmount(ctx context.Context, stmt *sql.Stmt, account DecayAmount) error {
 	// Insert data into Table1
-	_, err := stmt.ExecContext(ctx, account.Sender, account.VoteAction, account.IBCAction, account.DelegateAction, account.EVMAction, account.TotalClaimed, account.TotalLost, account.InitialClaimableAmount)
+	_, err := stmt.ExecContext(ctx, account.Sender, account.VoteAction, account.IBCAction, account.DelegateAction, account.EVMAction, account.TotalClaimed, account.TotalLost, account.InitialClaimableAmount, account.TotalLostEvmos)
 	if err != nil {
 		return fmt.Errorf("error inserting data into DecayAmount: %v", err)
 	}
